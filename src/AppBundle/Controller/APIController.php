@@ -13,7 +13,7 @@ class APIController extends Controller
      */
     public function uploadAction(Request $request)
     {
-        return;
+        return "test";
     }
 
     /**
@@ -21,6 +21,6 @@ class APIController extends Controller
      */
     public function indexAction(Request $request)
     {
-        return;
+        return "test";
     }
 }
