@@ -1,0 +1,5 @@
+360emed_patient_api_upload:
+    path: /uploadData
+    defaults:
+        _controller: AppBundle:APIController:uploadAction
+        _method: POST
