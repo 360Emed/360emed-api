@@ -21,7 +21,7 @@ class APIController extends Controller
         print_r($request->get('validationToken'));
         if ($request->get('validationToken') == $this->validationToken)
         {
-            $this->patientDataService = PatientDataService();
+            $this->patientDataService = new PatientDataService();
             $this->patientDataService->savePatientData($request->getContent());
             $message = "successful";
         }
