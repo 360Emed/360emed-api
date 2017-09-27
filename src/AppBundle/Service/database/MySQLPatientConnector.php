@@ -111,7 +111,7 @@ class MySQLPatientConnector
         ));
 
         //insert
-        $sql = "INSERT INTO PATIENT_DATA (patient_id, data)
+        $sql = "INSERT INTO patient_data (patient_id, data)
                     VALUES (:data, :patientID)";
         $query = $this->pdo->prepare($sql);
         // use exec() because no results are returned
