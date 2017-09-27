@@ -103,8 +103,7 @@ class MySQLPatientConnector
     {
         print_r('patient id: ' . $patientID);
         //delete existing patient data
-        $sql = "DELETE FROM patient_data WHERE patient_id=
-                    :PATIENTID)";
+        $sql = "DELETE FROM patient_data WHERE patient_id=:PATIENTID)";
         $query = $this->pdo->prepare($sql);
         // use exec() because no results are returned
         $query->execute(array(
