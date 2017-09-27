@@ -17,12 +17,12 @@ class PatientDataService implements iPatientDataService
     function savePatientData($dataString)
     {
         // TODO: Implement savePatientData() method.
-        $data = json_decode($dataString, false);
+        $data = json_decode($dataString, true);
 
-        $pdata = $data->patient->data;
-        $pfirstname = $data->patient->firstname;
-        $plastname = $data->patient->lastname;
-        $pemail = $data->patient->email;
+        $pdata = $data['patient']['data'];
+        $pfirstname = $data['patient']['firstname'];
+        $plastname = $data['patient']['lastname'];
+        $pemail = $data['patient']['email'];
 
         $this->saveToDB($pfirstname,$plastname ,$pemail, $pdata);
     }
