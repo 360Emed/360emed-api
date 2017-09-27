@@ -18,7 +18,7 @@ class PatientDataService implements iPatientDataService
     {
         // TODO: Implement savePatientData() method.
         $data = json_decode($dataString, true);
-        print_r($data);die;
+        
         $pdata = $data->patient->data;
         $pfirstname = $data->patient->firstname;
         $plastname = $data->patient->lastname;
