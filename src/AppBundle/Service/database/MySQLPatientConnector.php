@@ -26,7 +26,6 @@ class MySQLPatientConnector
             // set the PDO error mode to exception
             $this->pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 
-            echo "New record created successfully";
         }
         catch(\PDOException $e)
         {
@@ -101,7 +100,6 @@ class MySQLPatientConnector
      */
     function insertData($patientID, $patientData)
     {
-        print_r('patient id: ' . $patientID);
         //delete existing patient data
         $sql = "DELETE FROM patient_data WHERE patient_id=:PATIENTID";
         $query = $this->pdo->prepare($sql);
