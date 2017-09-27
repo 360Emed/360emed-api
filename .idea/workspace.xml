@@ -27,9 +27,11 @@
       <file leaf-file-name="APIController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/APIController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
-              <folding />
+            <state relative-caret-position="525">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+              <folding>
+                <element signature="e#40#81#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -418,12 +420,12 @@
       <option name="presentableId" value="Default" />
       <updated>1506107121758</updated>
       <workItem from="1506107123651" duration="4942000" />
-      <workItem from="1506543229450" duration="245000" />
+      <workItem from="1506543229450" duration="295000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5187000" />
+    <option name="totallyTimeSpent" value="5237000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="708" extended-state="6" />
@@ -462,7 +464,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
-          <folding />
+          <folding>
+            <element signature="e#40#81#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -626,9 +630,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/APIController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
-          <folding />
+        <state relative-caret-position="525">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding>
+            <element signature="e#40#81#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

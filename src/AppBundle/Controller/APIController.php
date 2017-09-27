@@ -30,7 +30,7 @@ class APIController extends Controller
         }
 
         return new Response(
-            message
+            $message
         );
     }
 
