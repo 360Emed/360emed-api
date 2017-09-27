@@ -79,7 +79,7 @@ class MySQLPatientConnector
         if ($patientID !==false)
             return $patientID;
 
-        $sql = "INSERT INTO patient (firstname, lastname, email)
+        $sql = "INSERT INTO patient (first_name, last_name, email)
                     VALUES (:FIRSTNAME, :LASTNAME, :EMAIL)";
         $query = $this->pdo->prepare($sql);
         // use exec() because no results are returned
