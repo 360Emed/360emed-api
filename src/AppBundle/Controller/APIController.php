@@ -18,7 +18,6 @@ class APIController extends Controller
      */
     public function uploadAction(Request $request)
     {
-        print_r($request->get('validationToken'));
         if ($request->get('validationToken') == $this->validationToken)
         {
             $this->patientDataService = new PatientDataService();

@@ -11,11 +11,11 @@ namespace AppBundle\Service\database;
 
 class MySQLPatientConnector
 {
-    var $username;
-    var $password;
-    var $host;
-    var $port;
-    var $dbname;
+    var $username = "360emed";
+    var $password= "emed1@3";
+    var $host = "localhost";
+    var $port = "3306";
+    var $dbname = "emed_patient_management";
     var $pdo;
 
 
