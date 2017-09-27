@@ -3,3 +3,8 @@
     defaults:
         _controller: AppBundle:APIController:uploadAction
         _method: POST
+360emed_patient_api_home:
+    path: /
+    defaults:
+        _controller: AppBundle:APIController:indexAction
+        _method: GET
