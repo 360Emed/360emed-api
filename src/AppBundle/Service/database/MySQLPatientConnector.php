@@ -22,13 +22,13 @@ class MySQLPatientConnector
     function init()
     {
         try {
-            $this->pdo = new PDO("mysql:host=$this->servername;dbname=$this->dbname", $this->username, $this->password);
+            $this->pdo = new \PDO("mysql:host=$this->servername;dbname=$this->dbname", $this->username, $this->password);
             // set the PDO error mode to exception
-            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $this->pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 
             echo "New record created successfully";
         }
-        catch(PDOException $e)
+        catch(\PDOException $e)
         {
             echo $e->getMessage();
         }
