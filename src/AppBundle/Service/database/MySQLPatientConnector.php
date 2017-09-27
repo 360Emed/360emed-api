@@ -101,6 +101,7 @@ class MySQLPatientConnector
      */
     function insertData($patientID, $patientData)
     {
+        print_r('patient id: ' . $patientID);
         //delete existing patient data
         $sql = "DELETE FROM patient_data WHERE patient_id=
                     :PATIENTID)";
