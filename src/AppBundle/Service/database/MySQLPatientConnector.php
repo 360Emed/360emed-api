@@ -41,7 +41,7 @@ class MySQLPatientConnector
         {
             $this->init();
         }
-        $sql = "SELECT id FROM PATIENT
+        $sql = "SELECT id FROM patient
                     WHERE first_name=:FIRSTNAME and last_name=:LASTNAME and email=:EMAIL LIMIT 1";
         $query = $this->pdo->prepare($sql);
         // use exec() because no results are returned
@@ -79,7 +79,7 @@ class MySQLPatientConnector
         if ($patientID !==false)
             return $patientID;
 
-        $sql = "INSERT INTO PATIENT (firstname, lastname, email)
+        $sql = "INSERT INTO patient (firstname, lastname, email)
                     VALUES (:FIRSTNAME, :LASTNAME, :EMAIL)";
         $query = $this->pdo->prepare($sql);
         // use exec() because no results are returned
@@ -102,7 +102,7 @@ class MySQLPatientConnector
     function insertData($patientID, $patientData)
     {
         //delete existing patient data
-        $sql = "DELETE FROM PATIENT_DATA WHERE patient_id=
+        $sql = "DELETE FROM patient_data WHERE patient_id=
                     :PATIENTID)";
         $query = $this->pdo->prepare($sql);
         // use exec() because no results are returned
