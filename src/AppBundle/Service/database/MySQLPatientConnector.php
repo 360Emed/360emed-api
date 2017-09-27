@@ -41,7 +41,7 @@ class MySQLPatientConnector
         {
             $this->init();
         }
-        $sql = "SELECT FROM PATIENT id
+        $sql = "SELECT id FROM PATIENT
                     WHERE first_name=:FIRSTNAME, last_name=:LASTNAME, email=:EMAIL LIMIT 1";
         $query = $this->pdo->prepare($sql);
         // use exec() because no results are returned
