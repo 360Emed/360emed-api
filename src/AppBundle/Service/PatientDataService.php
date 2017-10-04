@@ -19,18 +19,37 @@ class PatientDataService implements iPatientDataService
         // TODO: Implement savePatientData() method.
         $data = json_decode($dataString, true);
 
-        $pdata = $data['patient']['data'];
         $pfirstname = $data['patient']['firstname'];
         $plastname = $data['patient']['lastname'];
         $pemail = $data['patient']['email'];
+        $pid = $data['patient']['patientid'];
 
-        $this->saveToDB($pfirstname,$plastname ,$pemail, $pdata);
+        $this->saveToDBPatient($pfirstname,$plastname ,$pemail, $pid);
     }
 
-    private function saveToDB($firstname, $lastname, $email, $data)
+    function savePatientAppointmentData($dataString)
+    {
+        // TODO: Implement savePatientData() method.
+        $data = json_decode($dataString, true);
+        $pfirstname = $data['patient']['firstname'];
+        $plastname = $data['patient']['lastname'];
+        $pemail = $data['patient']['email'];
+        $pid = $data['patient']['patientid'];
+        $pdata = $data['patient'];
+        $this->saveToDBAppointment($pfirstname,$plastname ,$pemail, $pid, $pdata);
+    }
+
+    private function saveToDBPatient($firstname, $lastname, $email, $pid, $data)
     {
         $this->sqlconnector=new MySQLPatientConnector();
-        $pid = $this->sqlconnector->insertPatient($firstname, $lastname, $email);
-        $this->sqlconnector->insertData($pid,$data );
+        $pid = $this->sqlconnector->insertPatient($firstname, $lastname, $email, $pid);
+        
+    }
+
+    private function saveToDBAppointment($firstname, $lastname, $email, $pid, $data)
+    {
+        $this->sqlconnector=new MySQLPatientConnector();
+        $pid = $this->sqlconnector->insertPatient($firstname, $lastname, $email, $pid);
+        $this->sqlconnector->insertData($pid,$data,'APPOINTMENT');
     }
 }

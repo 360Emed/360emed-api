@@ -11,22 +11,23 @@ use Symfony\Component\HttpFoundation\Response;
 class APIController extends Controller
 {
     var $validationToken="112112-1221-221212";
+    var $unauthorizedMsg = "Invalid Auth Token";
     var $patientDataService;
 
     /**
-     * @Route("/uploadData", name="uploadData")
+     * @Route("/updatePatient", name="updatePatient")
      */
-    public function uploadAction(Request $request)
+    public function updatePatientAction(Request $request)
     {
-        if ($request->get('validationToken') == $this->validationToken)
+        if ($this->isRequestValid($request))
         {
             $this->patientDataService = new PatientDataService();
             $this->patientDataService->savePatientData($request->getContent());
-            $message = "successful";
+            $message = $this->createMessageJson("Patient Updated");
         }
         else
         {
-            $message = "Invalid token provided";
+            $message = $this->createMessageJson($this->unauthorizedMsg);
         }
 
         return new Response(
@@ -42,5 +43,53 @@ class APIController extends Controller
         return new Response(
             '<html><body>This is the patient load API.</body></html>'
         );
+    }
+
+    /**
+     * @Route("/updateAppointment", name="updateAppointment")
+     */
+    public function updateAppointmentAction(Request $request)
+    {
+        if ($this->isRequestValid($request))
+        {
+            $this->patientDataService = new PatientDataService();
+            $this->patientDataService->savePatientAppointmentData($request->getContent());
+            $message = $this->createMessageJson("Patient Appointment Updated");
+        }
+        else
+        {
+            $message = $message = $this->createMessageJson($this->unauthorizedMsg);
+        }
+
+        return new Response(
+            $message
+        );
+
+    }
+
+    /**
+     * Validate Request
+     * @param Request $request
+     * @return bool
+     */
+    private function isRequestValid(Request $request)
+    {
+        if ($request->get('validationToken') == $this->validationToken)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Generate a json format message string
+     * @param $message
+     * @return array|string
+     */
+    private function createMessageJson($message)
+    {
+        $message = array('message'=>$message);
+        $message = json_encode($message);
+        return $message;
     }
 }

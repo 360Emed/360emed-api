@@ -1,10 +1,15 @@
-360emed_patient_api_upload:
-    path: /uploadData
+360emed_patient_api_patient:
+    path: /updatePatient
     defaults:
-        _controller: AppBundle:APIController:uploadAction
+        _controller: AppBundle:APIController:updatePatientAction
         _method: POST
 360emed_patient_api_home:
     path: /
     defaults:
         _controller: AppBundle:APIController:indexAction
+        _method: GET
+360emed_patient_api_appointment:
+    path: /updateAppointment
+    defaults:
+        _controller: AppBundle:APIController:updateAppointmentAction
         _method: GET
