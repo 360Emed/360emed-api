@@ -129,7 +129,7 @@ class MySQLPatientConnector
         $query = $this->pdo->prepare($sql);
         // use exec() because no results are returned
         $query->execute(array(
-            'data'=>$patientData,
+            'data'=>json_encode($patientData),
             'patientID'=>$patientID,
             'datatype'=>$type
         ));
