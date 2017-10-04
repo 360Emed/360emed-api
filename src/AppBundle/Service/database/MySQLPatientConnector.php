@@ -94,7 +94,7 @@ class MySQLPatientConnector
             $this->init();
         }
 
-        $patientID = $this->checkPatientExists($pid);
+        $patientID = $this->checkPatientExistsByHospitalPatientID($pid);
 
         if ($patientID !==false)
             return $patientID;
