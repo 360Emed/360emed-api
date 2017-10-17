@@ -8,7 +8,7 @@
 
 namespace AppBundle\Service;
 
-use AppBundle\Service\database\MySQLPatientConnector;
+use AppBundle\Service\database\PatientConnector;
 
 class PatientDataService implements iPatientDataService
 {
@@ -41,14 +41,14 @@ class PatientDataService implements iPatientDataService
 
     private function saveToDBPatient($firstname, $lastname, $email, $pid, $data)
     {
-        $this->sqlconnector=new MySQLPatientConnector();
+        $this->sqlconnector=new PatientConnector();
         $pid = $this->sqlconnector->insertPatient($firstname, $lastname, $email, $pid);
         
     }
 
     private function saveToDBAppointment($firstname, $lastname, $email, $pid, $data)
     {
-        $this->sqlconnector=new MySQLPatientConnector();
+        $this->sqlconnector=new PatientConnector();
         $pid = $this->sqlconnector->insertPatient($firstname, $lastname, $email, $pid);
         $this->sqlconnector->insertData($pid,$data,'APPOINTMENT');
     }

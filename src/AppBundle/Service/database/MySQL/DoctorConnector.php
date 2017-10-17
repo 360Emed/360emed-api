@@ -8,21 +8,20 @@
 
 namespace AppBundle\Service\database;
 
+use AppBundle\Service\database\MySQL\Config;
 
-class MySQLPatientConnector
+class DoctorConnector
 {
-    var $username = "360emed";
-    var $password= "emed1@3";
-    var $host = "localhost";
-    var $port = "3306";
-    var $dbname = "emed_patient_management";
+
     var $pdo;
 
-
+    /**
+     * INitialize the DB Connectors
+     */
     function init()
     {
         try {
-            $this->pdo = new \PDO("mysql:host=$this->host;dbname=$this->dbname", $this->username, $this->password);
+            $this->pdo = new \PDO("mysql:host=" . Config::host . ";dbname=" . Config::dbname, Config::username, Config::password);
             // set the PDO error mode to exception
             $this->pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 
@@ -34,13 +33,22 @@ class MySQLPatientConnector
 
     }
 
-    function checkPatientExists($firstname, $lastname, $email)
+    /**
+     *
+     * Check to see if doctor exists
+     *
+     * @param $firstname
+     * @param $lastname
+     * @param $email
+     * @return bool
+     */
+    function checkDoctorExists($firstname, $lastname, $email)
     {
         if ($this->pdo == null)
         {
             $this->init();
         }
-        $sql = "SELECT id FROM patient
+        $sql = "SELECT id FROM doctor
                     WHERE first_name=:FIRSTNAME and last_name=:LASTNAME and email=:EMAIL LIMIT 1";
         $query = $this->pdo->prepare($sql);
         // use exec() because no results are returned
@@ -57,18 +65,18 @@ class MySQLPatientConnector
         return false;
     }
 
-    function checkPatientExistsByHospitalPatientID($patientid)
+    function checkDoctorExistsByHospitalDoctorID($doctorid)
     {
         if ($this->pdo == null)
         {
             $this->init();
         }
-        $sql = "SELECT id FROM patient
-                    WHERE hospital_patient_id=:PATIENTID LIMIT 1";
+        $sql = "SELECT id FROM doctor
+                    WHERE hospital_doctor_id=:DOCTORID LIMIT 1";
         $query = $this->pdo->prepare($sql);
         // use exec() because no results are returned
         $query->execute(array(
-            'PATIENTID'=>$patientid));
+            'DOCTORID'=>$doctorid));
         $count = $query->rowCount();
         if ($count>0)
         {
@@ -80,34 +88,34 @@ class MySQLPatientConnector
 
     /**
      *
-     * Insert Patient, however if patient exists, return existing user id
+     * Insert Doctor but check for existence first
      *
      * @param $firstname
      * @param $lastname
      * @param $email
      * @return String
      */
-    function insertPatient($firstname, $lastname, $email, $pid)
+    function insertDoctor($firstname, $lastname, $email, $pid)
     {
         if ($this->pdo == null)
         {
             $this->init();
         }
 
-        $patientID = $this->checkPatientExistsByHospitalPatientID($pid);
+        $patientID = $this->checkDoctorExistsByHospitalDoctorID($pid);
 
         if ($patientID !==false)
             return $patientID;
 
-        $sql = "INSERT INTO patient (first_name, last_name, email, hospital_patient_id)
-                    VALUES (:FIRSTNAME, :LASTNAME, :EMAIL, :HOSPITALPATIENTID)";
+        $sql = "INSERT INTO doctor (first_name, last_name, email, hospital_doctor_id)
+                    VALUES (:FIRSTNAME, :LASTNAME, :EMAIL, :HOSPITALDOCTORID)";
         $query = $this->pdo->prepare($sql);
         // use exec() because no results are returned
         $query->execute(array(
             'FIRSTNAME'=>$firstname,
             'LASTNAME'=>$lastname,
             'EMAIL'=>$email,
-            'HOSPITALPATIENTID'=>$pid));
+            'HOSPITALDOCTORID'=>$pid));
 
         return $this->pdo->lastInsertId("id");
 
@@ -115,23 +123,22 @@ class MySQLPatientConnector
 
     /**
      *
-     * Always overwrite data for patient
+     * Always overwrite data for doctor
      *
      * @param $patientID
      * @param $patientData
      */
-    function insertData($patientID, $patientData, $type)
+    function insertData($doctorID, $doctorData, $type)
     {
 
         //insert
-        $sql = "INSERT INTO patient_data (data, patient_id, data_type)
-                    VALUES (:data, :patientID, :datatype)";
+        $sql = "INSERT INTO schedule (doctor_id, schedule_data)
+                    VALUES (:doctorID, :schedule_data)";
         $query = $this->pdo->prepare($sql);
         // use exec() because no results are returned
         $query->execute(array(
-            'data'=>json_encode($patientData),
-            'patientID'=>$patientID,
-            'datatype'=>$type
+            'schedule_data'=>json_encode($doctorData),
+            'doctorID'=>$doctorID
         ));
         
     }
