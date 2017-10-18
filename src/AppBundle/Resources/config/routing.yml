@@ -1,25 +1,25 @@
 360emed_patient_api_patient:
     path: /updatePatient
     defaults:
-        _controller: AppBundle:PatientAPIController:updatePatientAction
+        _controller: AppBundle:PatientAPI:updatePatientAction
         _method: POST
 360emed_patient_api_home:
     path: /
     defaults:
-        _controller: AppBundle:PatientAPIController:indexAction
+        _controller: AppBundle:PatientAPI:indexAction
         _method: GET
 360emed_patient_api_appointment:
     path: /updateAppointment
     defaults:
-        _controller: AppBundle:PatientAPIController:updateAppointmentAction
+        _controller: AppBundle:PatientAPI:updateAppointmentAction
         _method: POST
 360emed_doctor_api_doctor:
     path: /updateDoctor
     defaults:
-        _controller: AppBundle:DoctorAPIController:updateDoctorAction
+        _controller: AppBundle:DoctorAPI:updateDoctorAction
         _method: POST
 360emed_doctor_api_schedule:
     path: /updateDoctorSchedule
     defaults:
-        _controller: AppBundle:DoctorAPIController:updateScheduleAction
+        _controller: AppBundle:DoctorAPI:updateScheduleAction
         _method: POST
