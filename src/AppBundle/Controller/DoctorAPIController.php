@@ -22,7 +22,7 @@ class DoctorAPIController extends Controller
         {
             $this->doctorDataService = new DoctorDataService();
             $this->doctorDataService->saveDoctorData($request->getContent());
-            $message = $this->createMessageJson("Doctor Updated");
+            $message = DataEncoder::createMessageJson("Doctor Updated");
         }
         else
         {
@@ -40,7 +40,7 @@ class DoctorAPIController extends Controller
         {
             $this->doctorDataService = new DoctorDataService();
             $this->doctorDataService->saveDoctorScheduleData($request->getContent());
-            $message = $this->createMessageJson("Doctor Schedule Updated");
+            $message = DataEncoder::createMessageJson("Doctor Schedule Updated");
         }
         else
         {
