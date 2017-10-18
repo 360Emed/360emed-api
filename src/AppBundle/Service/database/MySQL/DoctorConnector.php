@@ -128,6 +128,25 @@ class DoctorConnector
      * @param $patientID
      * @param $patientData
      */
+    function cleanScheduleData($doctorID)
+    {
+        //delete
+        $sql = "DELETE FROM schedule WHERE 
+                    doctor_id=:doctorID";
+        $query = $this->pdo->prepare($sql);
+        // use exec() because no results are returned
+        $query->execute(array(
+            'doctorID'=>$doctorID
+        ));
+    }
+
+    /**
+     *
+     * Always overwrite data for doctor
+     *
+     * @param $patientID
+     * @param $patientData
+     */
     function insertData($doctorID, $doctorData, $type)
     {
 

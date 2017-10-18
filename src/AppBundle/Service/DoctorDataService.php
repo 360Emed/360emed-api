@@ -50,6 +50,7 @@ class DoctorDataService implements iDoctorDataService
     {
         $this->sqlconnector=new DoctorConnector();
         $pid = $this->sqlconnector->insertDoctor($firstname, $lastname, $email, $did);
+        $this->sqlconnector->cleanScheduleData($pid);
         $this->sqlconnector->insertData($pid,$data,'APPOINTMENT');
     }
 }
