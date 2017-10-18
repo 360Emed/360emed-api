@@ -8,7 +8,7 @@
 
 namespace AppBundle\Service;
 
-use AppBundle\Service\database\PatientConnector;
+use AppBundle\Service\database\MySQL\PatientConnector;
 
 class PatientDataService implements iPatientDataService
 {

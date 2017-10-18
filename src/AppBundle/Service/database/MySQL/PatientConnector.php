@@ -6,7 +6,7 @@
  * Time: 3:47 PM
  */
 
-namespace AppBundle\Service\database;
+namespace AppBundle\Service\database\MySQL;
 
 
 class PatientConnector

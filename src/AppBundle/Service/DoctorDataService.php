@@ -8,8 +8,7 @@
 
 namespace AppBundle\Service;
 
-
-use AppBundle\Service\database\DoctorConnector;
+use AppBundle\Service\database\MySQL\DoctorConnector;
 
 class DoctorDataService implements iDoctorDataService
 {
