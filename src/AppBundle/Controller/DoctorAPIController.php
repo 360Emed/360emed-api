@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Service\DoctorDataService;
 use AppBundle\Service\PatientDataService;
 use AppBundle\Utils\DataEncoder;
 use AppBundle\Utils\Validator;
