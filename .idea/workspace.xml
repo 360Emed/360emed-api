@@ -69,7 +69,7 @@
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/config/routing.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
-              <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+              <caret line="23" column="55" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -477,12 +477,12 @@
       <workItem from="1507080898953" duration="4520000" />
       <workItem from="1507315426199" duration="2000" />
       <workItem from="1508251673692" duration="2982000" />
-      <workItem from="1508346480210" duration="1021000" />
+      <workItem from="1508346480210" duration="1090000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18925000" />
+    <option name="totallyTimeSpent" value="18994000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="708" extended-state="6" />
@@ -949,7 +949,7 @@
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
-          <caret line="23" column="40" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
+          <caret line="23" column="55" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
           <folding />
         </state>
       </provider>
