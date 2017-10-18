@@ -25,10 +25,10 @@ class DoctorDataService implements iDoctorDataService
         $pemail = $data['doctor']['email'];
         $pid = $data['doctor']['doctorid'];
 
-        $this->saveToDBPatient($pfirstname,$plastname ,$pemail, $pid);
+        $this->saveToDBDoctor($pfirstname,$plastname ,$pemail, $pid);
     }
 
-    function saveDoctorSchedulingData($dataString)
+    function saveDoctorScheduleData($dataString)
     {
         // TODO: Implement saveDoctorSchedulingData() method.
         $data = json_decode($dataString, true);
@@ -37,7 +37,7 @@ class DoctorDataService implements iDoctorDataService
         $pemail = $data['doctor']['email'];
         $pid = $data['doctor']['doctorid'];
         $pdata = $data['doctor'];
-        $this->saveToDBAppointment($pfirstname,$plastname ,$pemail, $pid, $pdata);
+        $this->saveToDBSchedule($pfirstname,$plastname ,$pemail, $pid, $pdata);
     }
 
     private function saveToDBDoctor($firstname, $lastname, $email, $did, $data)
