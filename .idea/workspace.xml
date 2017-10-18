@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab7d790d-38c2-4299-8d11-578f9dc708fd" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/config/routing.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Utils/Validator.php" afterPath="$PROJECT_DIR$/src/AppBundle/Utils/Validator.php" />
     </list>
     <ignored path="360emed-api.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,33 +39,34 @@
       <file leaf-file-name="DoctorAPIController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DoctorAPIController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="35" column="40" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="40" />
-              <folding>
-                <element signature="e#40#81#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="135">
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="45" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PatientConnector.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/database/MySQL/PatientConnector.php">
+      <file leaf-file-name="Validator.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/Validator.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-              <folding>
-                <marker date="1508252931000" expanded="true" signature="749:868" placeholder="SELECT FROM PATIENT... " />
-                <marker date="1508252931000" expanded="true" signature="763:792" placeholder="INSERT INTO MyGuests... " />
-                <marker date="1508252931000" expanded="true" signature="1442:1529" placeholder="SELECT id FR... patient" />
-                <marker date="1508252931000" expanded="true" signature="2376:2508" placeholder="INSERT INTO patient... " />
-                <marker date="1508252931000" expanded="true" signature="2376:2526" placeholder="INSERT INTO PATIENT... " />
-                <marker date="1508252931000" expanded="true" signature="3076:3188" placeholder="INSERT INTO PATIENT_DATA... " />
-              </folding>
+            <state relative-caret-position="75">
+              <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routing.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DataEncoder.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/DataEncoder.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routing.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/config/routing.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
@@ -115,21 +116,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DoctorConnector.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/database/MySQL/DoctorConnector.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="39" column="24" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
-              <folding>
-                <marker date="1508265029000" expanded="true" signature="1001:1119" placeholder="SELECT id FR... patient" />
-                <marker date="1508265029000" expanded="true" signature="1690:1774" placeholder="SELECT id FR... patient" />
-                <marker date="1508265029000" expanded="true" signature="2593:2740" placeholder="INSERT INTO patient... " />
-                <marker date="1508265029000" expanded="true" signature="3286:3388" placeholder="INSERT INTO patient_data... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="services.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/config/services.yml">
           <provider selected="true" editor-type-id="text-editor">
@@ -153,7 +139,6 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/APIController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Service/database/MySQLPatientConnector.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Utils/DataEncoder.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Utils/Validator.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/PatientAPIController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/DoctorAPIController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Service/iPatientDataService.php" />
@@ -165,6 +150,7 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Service/DoctorDataService.php" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Utils/Validator.php" />
       </list>
     </option>
   </component>
@@ -477,12 +463,12 @@
       <workItem from="1507080898953" duration="4520000" />
       <workItem from="1507315426199" duration="2000" />
       <workItem from="1508251673692" duration="2982000" />
-      <workItem from="1508346480210" duration="1090000" />
+      <workItem from="1508346480210" duration="1173000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18994000" />
+    <option name="totallyTimeSpent" value="19077000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="708" extended-state="6" />
@@ -811,22 +797,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/Validator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/DataEncoder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/iDoctorDataService.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -926,16 +896,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DoctorAPIController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="40" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="40" />
-          <folding>
-            <element signature="e#40#81#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PatientAPIController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -950,6 +910,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="55" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DoctorAPIController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/Validator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Utils/DataEncoder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
           <folding />
         </state>
       </provider>

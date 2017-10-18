@@ -8,6 +8,7 @@
 
 namespace AppBundle\Utils;
 
+use Symfony\Component\HttpFoundation\Request;
 
 class Validator
 {
