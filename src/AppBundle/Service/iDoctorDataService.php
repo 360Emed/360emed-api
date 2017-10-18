@@ -12,5 +12,5 @@ namespace AppBundle\Service;
 interface iDoctorDataService
 {
     function saveDoctorData($dataString);
-    function saveDoctorSchedulingData($dataString);
+    function saveDoctorScheduleData($dataString);
 }
