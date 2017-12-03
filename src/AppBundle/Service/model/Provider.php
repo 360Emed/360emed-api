@@ -23,4 +23,7 @@ class Provider
     var $zip;
     var $notes;
     var $emr_provider_id;
+    var $local_provider_id;
+    //array of service IDs only
+    var $services;
 }

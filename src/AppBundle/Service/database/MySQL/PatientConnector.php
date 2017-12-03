@@ -9,26 +9,10 @@
 namespace AppBundle\Service\database\MySQL;
 
 
-class PatientConnector
+use AppBundle\Service\model\Patient;
+
+class PatientConnector extends DBConnector
 {
-    var $pdo;
-
-
-    function init()
-    {
-        try {
-            $this->pdo = new \PDO("mysql:host=" . Config::host . ";dbname=" . Config::dbname, Config::username, Config::password);
-            // set the PDO error mode to exception
-            $this->pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-
-        }
-        catch(\PDOException $e)
-        {
-            echo $e->getMessage();
-        }
-
-    }
-
     function checkPatientExists($firstname, $lastname, $email)
     {
         if ($this->pdo == null)
@@ -106,6 +90,32 @@ class PatientConnector
 
         return $this->pdo->lastInsertId("id");
 
+    }
+
+    /**
+     * returns all patients as Patient objects
+     */
+    function getAllPatients()
+    {
+        $patients = array();
+        $sql = "SELECT * FROM patient p LEFT OUTER JOIN patient_scheduleuser ps ON p.id=ps.patientID ";
+        $query = $this->pdo->prepare($sql);
+        // use exec() because no results are returned
+        $query->execute();
+        while($row = $query->fetch())
+        {
+            $patient = new Patient();
+            $patient->emr_patient_id = $row['hospital_patient_id'];
+            $patient->firstname = $row['first_name'];
+            $patient->lastname = $row['last_name'];
+            $patient->email = $row['email'];
+            $patient->id = $row['scheduleUserID'];
+            $patient->local_patient_id = $row['id'];
+
+            $patients[] = $patient;
+        }
+
+        return $patients;
     }
 
     /**

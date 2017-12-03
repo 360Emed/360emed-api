@@ -20,4 +20,6 @@ class Appointment
     var $providerID;
     var $serviceID;
     var $googleCalendarID;
+    //when the appointment is booked
+    var $book;
 }

@@ -21,4 +21,5 @@ class Patient
     var $zip;
     var $notes;
     var $id;
+    var $local_patient_id;
 }

@@ -9,30 +9,10 @@
 namespace AppBundle\Service\database\MySQL;
 
 use AppBundle\Service\database\MySQL\Config;
+use AppBundle\Service\model\Provider;
 
-class DoctorConnector
+class DoctorConnector extends DBConnector
 {
-
-    var $pdo;
-
-    /**
-     * INitialize the DB Connectors
-     */
-    function init()
-    {
-        try {
-            $this->pdo = new \PDO("mysql:host=" . Config::host . ";dbname=" . Config::dbname, Config::username, Config::password);
-            // set the PDO error mode to exception
-            $this->pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-
-        }
-        catch(\PDOException $e)
-        {
-            echo $e->getMessage();
-        }
-
-    }
-
     /**
      *
      * Check to see if doctor exists
@@ -160,5 +140,33 @@ class DoctorConnector
             'doctorID'=>$doctorID
         ));
         
+    }
+    /**
+     * returns all doctors as Doctor Object
+     */
+    function getAllDoctors()
+    {
+        $providers = array();
+        $sql = "SELECT * FROM doctor d LEFT OUTER JOIN provider_appointmentprovider ps ON d.id=ps.providerID ";
+        $query = $this->pdo->prepare($sql);
+        // use exec() because no results are returned
+        $query->execute();
+        while($row = $query->fetch())
+        {
+            $provider = new Provider();
+            $provider->id = $row['appointmentproviderID'];
+            $provider->firstname = $row['first_name'];
+            $provider->lastname = $row['last_name'];
+            $provider->email = $row['email'];
+            $provider->emr_provider_id = $row['hospital_doctor_id'];
+            $provider->local_provider_id = $row['id'];
+
+            //provider needs to be associated with services
+            
+
+            $providers[] = $provider;
+        }
+
+        return $providers;
     }
 }
