@@ -11,7 +11,7 @@ namespace AppBundle\Service\model;
 
 class Provider
 {
-    var $ezappt_provider_id;
+    var $id;
     var $firstname;
     var $lastname;
     var $email;

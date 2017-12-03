@@ -20,5 +20,5 @@ class Patient
     var $city;
     var $zip;
     var $notes;
-    var $ezappt_paptient_id;
+    var $id;
 }

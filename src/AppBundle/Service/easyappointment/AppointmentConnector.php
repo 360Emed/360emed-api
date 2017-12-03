@@ -19,37 +19,32 @@ class AppointmentConnector extends RestAPI
             'content-type' => 'application/json'
         ),array());
         $request->setBody(\GuzzleHttp\json_encode($appointment));
-        $request->send();
+        $response = $request->send();
+        return $response->getBody();
     }
 
     public function updateAppointment(Appointment $appointment)
     {
-        $post_uri = '/api/v1/appointments';
-        $request = $this->client->post($post_uri,array(
+        $put_uri = '/api/v1/appointments/' . $appointment->id;
+        $request = $this->client->put($put_uri,array(
             'content-type' => 'application/json'
         ),array());
         $request->setBody(\GuzzleHttp\json_encode($appointment));
+        $request->send();
     }
 
     public function cancelAppointment(Appointment $appointment)
     {
-        $post_uri = '/api/v1/appointments';
-        $post_body = array(RequestOptions::JSON =>
-            [
-                'foo' => 'bar'
-            ]
-        );
-        $this->client->post($post_uri);
+        $delete_uri = '/api/v1/appointments/' . $appointment->id;
+
+        $this->client->delete($delete_uri)->send();
     }
 
     public function getAppointment(Appointment $appointment)
     {
-        $post_uri = '/api/v1/appointments';
-        $post_body = array(RequestOptions::JSON =>
-            [
-                'foo' => 'bar'
-            ]
-        );
-        $this->client->post($post_uri);
+        $get_uri = '/api/v1/appointments/' . $appointment->id;
+
+        $response = $this->client->get($get_uri)->send();
+        return $response->getBody();
     }
 }
