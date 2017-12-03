@@ -52,4 +52,15 @@ class PatientDataService implements iPatientDataService
         $pid = $this->sqlconnector->insertPatient($firstname, $lastname, $email, $pid);
         $this->sqlconnector->insertData($pid,$data,'APPOINTMENT');
     }
+
+    private function getPatientIDs($emrPatientID)
+    {
+        $ids = array();
+        return $ids;
+    }
+
+    private function saveToEzyAppointment()
+    {
+        //implement logic to save data to ezy appointment
+    }
 }

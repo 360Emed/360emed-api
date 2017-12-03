@@ -53,4 +53,15 @@ class DoctorDataService implements iDoctorDataService
         $this->sqlconnector->cleanScheduleData($pid);
         $this->sqlconnector->insertData($pid,$data,'APPOINTMENT');
     }
+
+    private function getProviderIDs($emr_provider_id)
+    {
+        $ids = array();
+        return $ids;
+    }
+
+    private function saveToEzyAppointment()
+    {
+        //implement logic to save data to ezy appointment
+    }
 }
