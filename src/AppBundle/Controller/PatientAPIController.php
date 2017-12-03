@@ -14,10 +14,7 @@ class PatientAPIController extends Controller
 {
 
     var $patientDataService;
-
-    /**
-     * @Route("/updatePatient", name="updatePatient")
-     */
+    
     public function updatePatientAction(Request $request)
     {
         if (Validator::isRequestValid($request))
