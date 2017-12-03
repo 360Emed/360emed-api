@@ -24,7 +24,10 @@ class PatientDataService implements iPatientDataService
         $pemail = $data['patient']['email'];
         $pid = $data['patient']['patientid'];
 
+        //step 1 save to local integration DB
         $this->saveToDBPatient($pfirstname,$plastname ,$pemail, $pid);
+        //step 2, check to see if the account exists in the easyappointment system by checking the local reference table
+        //step 3, if exists, update patient, if NOT exists, insert patient
     }
 
     function savePatientAppointmentData($dataString)
@@ -36,12 +39,19 @@ class PatientDataService implements iPatientDataService
         $pemail = $data['patient']['email'];
         $pid = $data['patient']['patientid'];
         $pdata = $data['patient'];
+
+        //step 1 save to local integration DB
         $this->saveToDBAppointment($pfirstname,$plastname ,$pemail, $pid, $pdata);
+        //step 2, check to see if the appointment exists in the easyappointment system by checking the local reference table
+        //step 3, if exists, update appointment, if NOT exists, insert appointment
+        //step 4, handle removal of cancelled appointments, this is going to be tricky...  If the EA
+        // appointments for the patient DOES not exist in the appointment load here, delete them from easy appointment
     }
 
     private function saveToDBPatient($firstname, $lastname, $email, $pid, $data)
     {
         $this->sqlconnector=new PatientConnector();
+        //insert patient takes care of both insert and update
         $pid = $this->sqlconnector->insertPatient($firstname, $lastname, $email, $pid);
         
     }
@@ -49,6 +59,7 @@ class PatientDataService implements iPatientDataService
     private function saveToDBAppointment($firstname, $lastname, $email, $pid, $data)
     {
         $this->sqlconnector=new PatientConnector();
+        //insert patient takes care of both insert and update
         $pid = $this->sqlconnector->insertPatient($firstname, $lastname, $email, $pid);
         $this->sqlconnector->insertData($pid,$data,'APPOINTMENT');
     }

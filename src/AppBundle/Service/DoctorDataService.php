@@ -24,7 +24,11 @@ class DoctorDataService implements iDoctorDataService
         $pemail = $data['doctor']['email'];
         $pid = $data['doctor']['doctorid'];
 
+        //Step 1 save doctor to local db
         $this->saveToDBDoctor($pfirstname,$plastname ,$pemail, $pid);
+
+        //Step 2, check to see if doctor exists in integration table
+        //Step 3, if doctor is not here, insert, else update
     }
 
     function saveDoctorScheduleData($dataString)
@@ -36,7 +40,12 @@ class DoctorDataService implements iDoctorDataService
         $pemail = $data['doctor']['email'];
         $pid = $data['doctor']['doctorid'];
         $pdata = $data['doctor'];
+
+        //Step 1, save schedule in local db
         $this->saveToDBSchedule($pfirstname,$plastname ,$pemail, $pid, $pdata);
+
+        //Step 2, update schedule in easy appointment, however, easy appointment does not offer availability
+        //thus a new feature has to be created in easy appointment to allow availability updates
     }
 
     private function saveToDBDoctor($firstname, $lastname, $email, $did, $data)
