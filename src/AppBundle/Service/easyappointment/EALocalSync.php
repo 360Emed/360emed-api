@@ -8,6 +8,11 @@
 
 namespace AppBundle\Service\easyappointment;
 
+use AppBundle\Service\database\MySQL\PatientConnector;
+use AppBundle\Service\easyappointment\PatientConnector as EAPatientConnector;
+use AppBundle\Service\model\Patient;
+use AppBundle\Service\PatientDataService;
+
 /**
  * This class sync all the existing content between Easy Appointment and local integration data
  * What it means, is that it will reset all data in easy appointment.
@@ -27,9 +32,40 @@ class EALocalSync extends RestAPI
 
     public function syncPatients()
     {
+        $patientService = new PatientDataService();
+        $patients = $patientService->getAllPatients();
+
+        $ea_patientConnector = new EAPatientConnector();
+
         //loop through all patients
-        //if integration link exists, call update api, if not, call insert api
-        //if insert is called, create integration link
+        foreach ($patients as $patient)
+        {
+            $patientExists=false;
+            if ($patient->id!=null && $patient->id!='')
+            {
+                $result = $ea_patientConnector->getPatient($patient);
+                if ($result && $result->id!=null)
+                {
+                    //patient exists
+                    $patientExists=true;
+                }
+            }
+
+            //update patient if patient exists
+            if ($patientExists)
+            {
+                $ea_patientConnector->updatePatient($patient);
+            }
+            else
+            {
+                $ea_patientConnector->insertPatient($patient);
+            }
+
+            //if integration link exists, call update api, if not, call insert api
+            //if insert is called, create integration link
+        }
+
+
     }
 
     public function syncDoctors()
