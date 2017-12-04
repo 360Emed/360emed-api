@@ -8,9 +8,9 @@
 
 namespace AppBundle\Service;
 
-use AppBundle\Service\database\MySQL\DoctorConnector;
+use AppBundle\Service\database\MySQL\ProviderConnector;
 
-class DoctorDataService implements iDoctorDataService
+class ProviderDataService implements iProviderDataService
 {
     var $sqlconnector;
 
@@ -50,14 +50,14 @@ class DoctorDataService implements iDoctorDataService
 
     private function saveToDBDoctor($firstname, $lastname, $email, $did, $data)
     {
-        $this->sqlconnector=new DoctorConnector();
+        $this->sqlconnector=new ProviderConnector();
         $pid = $this->sqlconnector->insertDoctor($firstname, $lastname, $email, $did);
 
     }
 
     private function saveToDBSchedule($firstname, $lastname, $email, $did, $data)
     {
-        $this->sqlconnector=new DoctorConnector();
+        $this->sqlconnector=new ProviderConnector();
         $pid = $this->sqlconnector->insertDoctor($firstname, $lastname, $email, $did);
         $this->sqlconnector->cleanScheduleData($pid);
         $this->sqlconnector->insertData($pid,$data,'APPOINTMENT');
@@ -72,5 +72,11 @@ class DoctorDataService implements iDoctorDataService
     private function saveToEzyAppointment()
     {
         //implement logic to save data to ezy appointment
+    }
+
+    public function getAllDoctors()
+    {
+        $this->sqlconnector = new ProviderConnector();
+        return $this->sqlconnector->getAllDoctors();
     }
 }

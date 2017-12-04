@@ -2,7 +2,7 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Service\DoctorDataService;
+use AppBundle\Service\ProviderDataService;
 use AppBundle\Service\PatientDataService;
 use AppBundle\Utils\DataEncoder;
 use AppBundle\Utils\Validator;
@@ -11,16 +11,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class DoctorAPIController extends Controller
+class ProviderAPIController extends Controller
 {
     var $doctorDataService;
 
 
-    public function updateDoctorAction(Request $request)
+    public function updateProviderAction(Request $request)
     {
         if (Validator::isRequestValid($request))
         {
-            $this->doctorDataService = new DoctorDataService();
+            $this->doctorDataService = new ProviderDataService();
             $this->doctorDataService->saveDoctorData($request->getContent());
             $message = DataEncoder::createMessageJson("Doctor Updated");
         }
@@ -38,7 +38,7 @@ class DoctorAPIController extends Controller
     {
         if (Validator::isRequestValid($request))
         {
-            $this->doctorDataService = new DoctorDataService();
+            $this->doctorDataService = new ProviderDataService();
             $this->doctorDataService->saveDoctorScheduleData($request->getContent());
             $message = DataEncoder::createMessageJson("Doctor Schedule Updated");
         }

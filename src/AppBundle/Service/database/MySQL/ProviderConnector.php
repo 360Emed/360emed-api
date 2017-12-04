@@ -11,7 +11,7 @@ namespace AppBundle\Service\database\MySQL;
 use AppBundle\Service\database\MySQL\Config;
 use AppBundle\Service\model\Provider;
 
-class DoctorConnector extends DBConnector
+class ProviderConnector extends DBConnector
 {
     /**
      *
@@ -144,7 +144,7 @@ class DoctorConnector extends DBConnector
     /**
      * returns all doctors as Doctor Object
      */
-    function getAllDoctors()
+    function getAllProviders()
     {
         $providers = array();
         $sql = "SELECT * FROM doctor d LEFT OUTER JOIN provider_appointmentprovider ps ON d.id=ps.providerID ";
@@ -162,7 +162,7 @@ class DoctorConnector extends DBConnector
             $provider->local_provider_id = $row['id'];
 
             //provider needs to be associated with services
-            
+
 
             $providers[] = $provider;
         }

@@ -69,12 +69,18 @@ class PatientDataService implements iPatientDataService
         $ids = array();
 
         //logic to retrieve patient IDs
-        
+
         return $ids;
     }
 
     private function saveToEzyAppointment()
     {
         //implement logic to save data to ezy appointment
+    }
+
+    public function getAllPatients()
+    {
+        $this->sqlconnector=new PatientConnector();
+        return $this->sqlconnector->getAllPatients();
     }
 }

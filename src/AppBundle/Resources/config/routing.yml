@@ -16,12 +16,12 @@
 360emed_doctor_api_doctor:
     path: /updateDoctor
     defaults:
-        _controller: AppBundle:DoctorAPI:updateDoctor
+        _controller: AppBundle:ProviderAPI:updateProvider
         _method: POST
 360emed_doctor_api_schedule:
     path: /updateDoctorSchedule
     defaults:
-        _controller: AppBundle:DoctorAPI:updateSchedule
+        _controller: AppBundle:ProviderAPI:updateSchedule
         _method: POST
 360emed_util_api_sync:
     path: /sync-easyappointment

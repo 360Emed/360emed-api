@@ -9,7 +9,7 @@
 namespace AppBundle\Service;
 
 
-interface iDoctorDataService
+interface iProviderDataService
 {
     function saveDoctorData($dataString);
     function saveDoctorScheduleData($dataString);
