@@ -44,7 +44,7 @@ class DoctorAPIController extends Controller
         }
         else
         {
-            $message = $message = DataEncoder::createMessageJson(Validator::unauthorizedMsg);
+            $message = DataEncoder::createMessageJson(Validator::unauthorizedMsg);
         }
 
         return new Response(

@@ -14,7 +14,7 @@ class PatientAPIController extends Controller
 {
 
     var $patientDataService;
-    
+
     public function updatePatientAction(Request $request)
     {
         if (Validator::isRequestValid($request))
@@ -50,7 +50,7 @@ class PatientAPIController extends Controller
         }
         else
         {
-            $message = $message = DataEncoder::createMessageJson(Validator::unauthorizedMsg);
+            $message = DataEncoder::createMessageJson(Validator::unauthorizedMsg);
         }
 
         return new Response(

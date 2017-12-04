@@ -67,6 +67,9 @@ class PatientDataService implements iPatientDataService
     private function getPatientIDs($emrPatientID)
     {
         $ids = array();
+
+        //logic to retrieve patient IDs
+        
         return $ids;
     }
 

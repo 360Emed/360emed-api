@@ -23,3 +23,8 @@
     defaults:
         _controller: AppBundle:DoctorAPI:updateSchedule
         _method: POST
+360emed_util_api_sync:
+    path: /sync-easyappointment
+    defaults:
+        _controller: AppBundle:Sync:syncEasyAppointment
+        _method: GET
