@@ -16,36 +16,36 @@ class AppointmentConnector extends RestAPI
     public function insertAppointment(Appointment $appointment)
     {
         $post_uri = '/index.php/api/v1/appointments';
-        $request = $this->client->post($post_uri,array(
-            'content-type' => 'application/json'
-        ),array());
-        $request->setBody(\GuzzleHttp\json_encode($appointment));
-        $response = $request->send();
+        $response = $this->client->post($post_uri,array(
+            'body' => \GuzzleHttp\json_encode($appointment)
+        ));
+
         return $response->getBody();
     }
 
     public function updateAppointment(Appointment $appointment)
     {
         $put_uri = '/index.php/api/v1/appointments/' . $appointment->id;
-        $request = $this->client->put($put_uri,array(
-            'content-type' => 'application/json'
-        ),array());
-        $request->setBody(\GuzzleHttp\json_encode($appointment));
-        $request->send();
+        $response = $this->client->put($put_uri,array(
+            'body' => \GuzzleHttp\json_encode($appointment)
+        ));
+
     }
 
     public function cancelAppointment(Appointment $appointment)
     {
         $delete_uri = '/index.php/api/v1/appointments/' . $appointment->id;
 
-        $this->client->delete($delete_uri)->send();
+        $this->client->delete($delete_uri);
     }
 
     public function getAppointment(Appointment $appointment)
     {
+        if ($appointment->id==null)
+            return null;
         $get_uri = '/index.php/api/v1/appointments/' . $appointment->id;
 
-        $response = $this->client->get($get_uri)->send();
+        $response = $this->client->get($get_uri);
         return $response->getBody();
     }
 }

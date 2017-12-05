@@ -16,36 +16,34 @@ class ProviderConnector extends RestAPI
     public function insertProvider(Provider $provider)
     {
         $post_uri = '/index.php/api/v1/providers';
-        $request = $this->client->post($post_uri,array(
-            'content-type' => 'application/json'
-        ),array());
-        $request->setBody(\GuzzleHttp\json_encode($provider));
-        $response = $request->send();
+        $response = $this->client->post($post_uri,array(
+            'body' => \GuzzleHttp\json_encode($provider)
+        ));
         return $response->getBody();
     }
 
     public function updateProvider(Provider $provider)
     {
         $post_uri = '/index.php/api/v1/providers' . $provider->id;
-        $request = $this->client->put($post_uri,array(
-            'content-type' => 'application/json'
-        ),array());
-        $request->setBody(\GuzzleHttp\json_encode($provider));
-        $response = $request->send();
+        $response = $this->client->put($post_uri,array(
+            'body' => \GuzzleHttp\json_encode($provider)
+        ));
         return $response->getBody();
     }
 
     public function getProvider(Provider $provider)
     {
+        if ($provider->id==null)
+            return null;
         $post_uri = '/index.php/api/v1/providers/' . $provider->id;
-        $response = $this->client->post($post_uri)->send();
+        $response = $this->client->post($post_uri);
         return $response;
     }
 
     public function deleteProvider(Provider $provider)
     {
         $post_uri = '/index.php/api/v1/providers/' . $provider->id;
-        $response = $this->client->delete($post_uri)->send();
+        $response = $this->client->delete($post_uri);
         return $response;
     }
 

@@ -16,32 +16,29 @@ class PatientConnector extends RestAPI
     public function insertPatient(Patient $patient)
     {
         $post_uri = '/index.php/api/v1/customers';
-        $request = $this->client->post($post_uri,array(
-            'content-type' => 'application/json'
-        ),array());
+        $response = $this->client->post($post_uri,array(
+            'body' => \GuzzleHttp\json_encode($patient)
+        ));
 
-        $request->setBody(\GuzzleHttp\json_encode($patient));
 
-        print_r(\GuzzleHttp\json_encode($patient));
-        $response = $request->send();
         return $response->getBody();
     }
 
     public function updatePatient(Patient $patient)
     {
         $post_uri = '/index.php/api/v1/customers/' . $patient->id;
-        $request = $this->client->put($post_uri,array(
-            'content-type' => 'application/json'
-        ),array());
-        $request->setBody(\GuzzleHttp\json_encode($patient));
-        $response = $request->send();
+        $response = $this->client->put($post_uri,array(
+            'body' => \GuzzleHttp\json_encode($patient)
+        ));
         return $response->getBody();
     }
 
     public function getPatient(Patient $patient)
     {
+        if ($patient->id==null)
+            return null;
         $post_uri = '/index.php/api/v1/customers/' . $patient->id;
-        $request = $this->client->get($post_uri)->send();
+        $request = $this->client->get($post_uri);
         $response = $request->send();
         return $response->getBody();
     }
@@ -49,7 +46,7 @@ class PatientConnector extends RestAPI
     public function deletePatient(Patient $patient)
     {
         $post_uri = '/index.php/api/v1/customers/' . $patient->id;
-        $request = $this->client->delete($post_uri)->send();
+        $request = $this->client->delete($post_uri);
         $response = $request->send();
         return $response->getBody();
     }
