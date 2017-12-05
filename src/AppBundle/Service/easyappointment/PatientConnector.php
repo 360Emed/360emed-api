@@ -19,7 +19,10 @@ class PatientConnector extends RestAPI
         $request = $this->client->post($post_uri,array(
             'content-type' => 'application/json'
         ),array());
+
         $request->setBody(\GuzzleHttp\json_encode($patient));
+
+        print_r(\GuzzleHttp\json_encode($patient));
         $response = $request->send();
         return $response->getBody();
     }
