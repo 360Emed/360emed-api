@@ -9,6 +9,7 @@
 namespace AppBundle\Service\easyappointment;
 
 use AppBundle\Service\model\Provider;
+use AppBundle\Service\easyappointment\RestAPI;
 
 class ProviderConnector extends RestAPI
 {

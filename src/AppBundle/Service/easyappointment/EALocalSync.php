@@ -12,6 +12,7 @@ use AppBundle\Service\database\MySQL\PatientConnector;
 use AppBundle\Service\easyappointment\PatientConnector as EAPatientConnector;
 use AppBundle\Service\model\Patient;
 use AppBundle\Service\PatientDataService;
+use AppBundle\Service\easyappointment\RestAPI;
 
 /**
  * This class sync all the existing content between Easy Appointment and local integration data
