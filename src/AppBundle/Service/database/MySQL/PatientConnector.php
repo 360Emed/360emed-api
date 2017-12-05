@@ -106,8 +106,8 @@ class PatientConnector extends DBConnector
         {
             $patient = new Patient();
             $patient->emr_patient_id = $row['hospital_patient_id'];
-            $patient->firstname = $row['first_name'];
-            $patient->lastname = $row['last_name'];
+            $patient->firstName = $row['first_name'];
+            $patient->lastName = $row['last_name'];
             $patient->email = $row['email'];
             $patient->id = $row['scheduleUserID'];
             $patient->local_patient_id = $row['id'];

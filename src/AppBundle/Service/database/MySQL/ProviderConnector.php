@@ -155,8 +155,8 @@ class ProviderConnector extends DBConnector
         {
             $provider = new Provider();
             $provider->id = $row['appointmentproviderID'];
-            $provider->firstname = $row['first_name'];
-            $provider->lastname = $row['last_name'];
+            $provider->firstName = $row['first_name'];
+            $provider->lastName = $row['last_name'];
             $provider->email = $row['email'];
             $provider->emr_provider_id = $row['hospital_doctor_id'];
             $provider->local_provider_id = $row['id'];
