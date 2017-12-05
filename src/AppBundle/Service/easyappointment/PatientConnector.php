@@ -15,6 +15,7 @@ class PatientConnector extends RestAPI
 {
     public function insertPatient(Patient $patient)
     {
+        print_r(\GuzzleHttp\json_encode($patient));
         $post_uri = '/index.php/api/v1/customers';
         $response = $this->client->post($post_uri,array(
             'body' => \GuzzleHttp\json_encode($patient)
@@ -26,6 +27,7 @@ class PatientConnector extends RestAPI
 
     public function updatePatient(Patient $patient)
     {
+        print_r(\GuzzleHttp\json_encode($patient));
         $post_uri = '/index.php/api/v1/customers/' . $patient->id;
         $response = $this->client->put($post_uri,array(
             'body' => \GuzzleHttp\json_encode($patient)
