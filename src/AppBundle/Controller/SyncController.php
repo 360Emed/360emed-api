@@ -11,6 +11,8 @@ namespace AppBundle\Controller;
 use AppBundle\Service\easyappointment\EALocalSync;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Utils\Validator;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class SyncController extends Controller
 {
