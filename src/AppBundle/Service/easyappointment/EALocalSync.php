@@ -32,6 +32,7 @@ class EALocalSync extends RestAPI
 
     public function syncPatients()
     {
+        //initialize patient services
         $patientService = new PatientDataService();
         $patients = $patientService->getAllPatients();
 
@@ -50,19 +51,23 @@ class EALocalSync extends RestAPI
                     $patientExists=true;
                 }
             }
-
             //update patient if patient exists
             if ($patientExists)
             {
+                //if integration link exists, call update api, if not, call insert api
                 $ea_patientConnector->updatePatient($patient);
             }
             else
             {
+                //insert patient
                 $ea_patientConnector->insertPatient($patient);
+                //when inserting, make sure the patient association record is there
+                //if insert is called, create integration link
+                $patientService->insertPatientMapping($patient);
             }
 
-            //if integration link exists, call update api, if not, call insert api
-            //if insert is called, create integration link
+            print_r('Updated record for patient: ' . $patient->email);
+
         }
 
 

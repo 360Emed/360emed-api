@@ -140,4 +140,22 @@ class PatientConnector extends DBConnector
         ));
         
     }
+
+    /**
+     * Generating mapping record
+     * @param $eapatientID
+     * @param $patientID
+     */
+    function generateMappingRecord($eapatientID, $patientID)
+    {
+        //insert
+        $sql = "INSERT INTO patient_scheduleuser (patientID, scheduleUserID)
+                    VALUES (:patientID, :scheduleUserID)";
+        $query = $this->pdo->prepare($sql);
+        // use exec() because no results are returned
+        $query->execute(array(
+            'patientID'=>$patientID,
+            'scheduleUserID'=>$eapatientID
+        ));
+    }
 }

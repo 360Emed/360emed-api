@@ -9,6 +9,7 @@
 namespace AppBundle\Service;
 
 use AppBundle\Service\database\MySQL\PatientConnector;
+use AppBundle\Service\model\Patient;
 
 class PatientDataService implements iPatientDataService
 {
@@ -82,5 +83,11 @@ class PatientDataService implements iPatientDataService
     {
         $this->sqlconnector=new PatientConnector();
         return $this->sqlconnector->getAllPatients();
+    }
+
+    public function insertPatientMapping(Patient $patient)
+    {
+        $this->sqlconnector=new PatientConnector();
+        $this->sqlconnector->generateMappingRecord($patient->local_patient_id,$patient->id);
     }
 }
