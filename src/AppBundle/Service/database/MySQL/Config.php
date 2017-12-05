@@ -11,8 +11,8 @@ namespace AppBundle\Service\database\MySQL;
 
 class Config
 {
-    const username = "360emed";
-    const password= "emed1@3";
+    const username = "root";
+    const password= "";
     const host = "localhost";
     const port = "3306";
     const dbname = "emed_patient_management";
