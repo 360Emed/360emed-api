@@ -53,9 +53,7 @@ class EALocalSync extends RestAPI
                 }
             }
 
-            //fix patient data fields
-            if ($patient->phone==null)
-                $patient->phone='N/A';
+            $this->repairData($patient);
 
             //update patient if patient exists
             if ($patientExists)
@@ -96,6 +94,17 @@ class EALocalSync extends RestAPI
         //loop through all appointments
         //if integration link exists, call update api, if not, call insert api
         //if insert is called, create integration link
+    }
+
+    public function repairData(&$patient)
+    {
+        //fix patient data fields
+        if ($patient->phone==null)
+            $patient->phone='000-000-0000';
+        if ($patient->email=='None')
+            $patient->email='default@360emed.hmtrevolution.com';
+
+
     }
 
 }
