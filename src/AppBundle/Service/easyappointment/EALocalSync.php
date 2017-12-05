@@ -64,7 +64,8 @@ class EALocalSync extends RestAPI
             else
             {
                 //insert patient
-                $ea_patientConnector->insertPatient($patient);
+                $response = json_decode($ea_patientConnector->insertPatient($patient));
+                $patient->id=$response->id;
                 //when inserting, make sure the patient association record is there
                 //if insert is called, create integration link
                 $patientService->insertPatientMapping($patient);
@@ -102,7 +103,7 @@ class EALocalSync extends RestAPI
         if ($patient->phone==null)
             $patient->phone='000-000-0000';
         if ($patient->email=='None')
-            $patient->email='default@360emed.hmtrevolution.com';
+            $patient->email=$patient->local_patient_id . '-default@360emed.hmtrevolution.com';
 
 
     }

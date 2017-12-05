@@ -21,7 +21,7 @@ class PatientConnector extends RestAPI
             'body' => \GuzzleHttp\json_encode($patient)
         ));
 
-
+    
         return $response->getBody();
     }
 
