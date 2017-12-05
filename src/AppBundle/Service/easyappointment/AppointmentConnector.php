@@ -15,7 +15,7 @@ class AppointmentConnector extends RestAPI
 {
     public function insertAppointment(Appointment $appointment)
     {
-        $post_uri = '/api/v1/appointments';
+        $post_uri = '/index.php/api/v1/appointments';
         $request = $this->client->post($post_uri,array(
             'content-type' => 'application/json'
         ),array());
@@ -26,7 +26,7 @@ class AppointmentConnector extends RestAPI
 
     public function updateAppointment(Appointment $appointment)
     {
-        $put_uri = '/api/v1/appointments/' . $appointment->id;
+        $put_uri = '/index.php/api/v1/appointments/' . $appointment->id;
         $request = $this->client->put($put_uri,array(
             'content-type' => 'application/json'
         ),array());
@@ -36,14 +36,14 @@ class AppointmentConnector extends RestAPI
 
     public function cancelAppointment(Appointment $appointment)
     {
-        $delete_uri = '/api/v1/appointments/' . $appointment->id;
+        $delete_uri = '/index.php/api/v1/appointments/' . $appointment->id;
 
         $this->client->delete($delete_uri)->send();
     }
 
     public function getAppointment(Appointment $appointment)
     {
-        $get_uri = '/api/v1/appointments/' . $appointment->id;
+        $get_uri = '/index.php/api/v1/appointments/' . $appointment->id;
 
         $response = $this->client->get($get_uri)->send();
         return $response->getBody();

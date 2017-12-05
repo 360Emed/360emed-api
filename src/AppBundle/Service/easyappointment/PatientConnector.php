@@ -15,7 +15,7 @@ class PatientConnector extends RestAPI
 {
     public function insertPatient(Patient $patient)
     {
-        $post_uri = '/api/v1/customers';
+        $post_uri = '/index.php/api/v1/customers';
         $request = $this->client->post($post_uri,array(
             'content-type' => 'application/json'
         ),array());
@@ -26,7 +26,7 @@ class PatientConnector extends RestAPI
 
     public function updatePatient(Patient $patient)
     {
-        $post_uri = '/api/v1/customers/' . $patient->id;
+        $post_uri = '/index.php/api/v1/customers/' . $patient->id;
         $request = $this->client->put($post_uri,array(
             'content-type' => 'application/json'
         ),array());
@@ -37,7 +37,7 @@ class PatientConnector extends RestAPI
 
     public function getPatient(Patient $patient)
     {
-        $post_uri = '/api/v1/customers/' . $patient->id;
+        $post_uri = '/index.php/api/v1/customers/' . $patient->id;
         $request = $this->client->get($post_uri)->send();
         $response = $request->send();
         return $response->getBody();
@@ -45,7 +45,7 @@ class PatientConnector extends RestAPI
 
     public function deletePatient(Patient $patient)
     {
-        $post_uri = '/api/v1/customers/' . $patient->id;
+        $post_uri = '/index.php/api/v1/customers/' . $patient->id;
         $request = $this->client->delete($post_uri)->send();
         $response = $request->send();
         return $response->getBody();

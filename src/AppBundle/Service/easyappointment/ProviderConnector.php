@@ -15,7 +15,7 @@ class ProviderConnector extends RestAPI
 {
     public function insertProvider(Provider $provider)
     {
-        $post_uri = '/api/v1/providers';
+        $post_uri = '/index.php/api/v1/providers';
         $request = $this->client->post($post_uri,array(
             'content-type' => 'application/json'
         ),array());
@@ -26,7 +26,7 @@ class ProviderConnector extends RestAPI
 
     public function updateProvider(Provider $provider)
     {
-        $post_uri = '/api/v1/providers' . $provider->id;
+        $post_uri = '/index.php/api/v1/providers' . $provider->id;
         $request = $this->client->put($post_uri,array(
             'content-type' => 'application/json'
         ),array());
@@ -37,14 +37,14 @@ class ProviderConnector extends RestAPI
 
     public function getProvider(Provider $provider)
     {
-        $post_uri = '/api/v1/providers/' . $provider->id;
+        $post_uri = '/index.php/api/v1/providers/' . $provider->id;
         $response = $this->client->post($post_uri)->send();
         return $response;
     }
 
     public function deleteProvider(Provider $provider)
     {
-        $post_uri = '/api/v1/providers/' . $provider->id;
+        $post_uri = '/index.php/api/v1/providers/' . $provider->id;
         $response = $this->client->delete($post_uri)->send();
         return $response;
     }

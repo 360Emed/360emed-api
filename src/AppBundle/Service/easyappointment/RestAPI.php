@@ -15,7 +15,7 @@ use AppBundle\Service\model\Patient;
 class RestAPI
 {
     var $client;
-    var $base_uri = 'https://localhost-easyappointment-api/index.php';
+    var $base_uri = 'https://localhost-easyappointment-api';
     var $username = 'api_user';
     var $password = 'api-test-password';
 
