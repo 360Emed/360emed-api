@@ -52,6 +52,11 @@ class EALocalSync extends RestAPI
                     $patientExists=true;
                 }
             }
+
+            //fix patient data fields
+            if ($patient->phone==null)
+                $patient->phone='N/A';
+
             //update patient if patient exists
             if ($patientExists)
             {

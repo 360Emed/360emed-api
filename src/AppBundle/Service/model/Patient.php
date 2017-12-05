@@ -12,8 +12,8 @@ namespace AppBundle\Service\model;
 class Patient
 {
     var $emr_patient_id;
-    var $firstname;
-    var $lastname;
+    var $firstName;
+    var $lastName;
     var $email;
     var $phone;
     var $address;

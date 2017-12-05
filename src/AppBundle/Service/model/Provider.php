@@ -12,8 +12,8 @@ namespace AppBundle\Service\model;
 class Provider
 {
     var $id;
-    var $firstname;
-    var $lastname;
+    var $firstName;
+    var $lastName;
     var $email;
     var $phone;
     var $mobile;
