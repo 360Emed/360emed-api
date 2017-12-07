@@ -55,21 +55,30 @@ class EALocalSync extends RestAPI
 
             $this->repairData($patient);
 
-            //update patient if patient exists
-            if ($patientExists)
+            //this is the process for loading the patients
+            try
             {
-                //if integration link exists, call update api, if not, call insert api
-                $ea_patientConnector->updatePatient($patient);
+                //update patient if patient exists
+                if ($patientExists)
+                {
+                    //if integration link exists, call update api, if not, call insert api
+                    $ea_patientConnector->updatePatient($patient);
+                }
+                else
+                {
+                    //insert patient
+                    $response = json_decode($ea_patientConnector->insertPatient($patient));
+
+                    $patient->id=$response->id;
+                    //when inserting, make sure the patient association record is there
+                    //if insert is called, create integration link
+                    $patientService->insertPatientMapping($patient);
+                }
+
             }
-            else
+            catch (Exception $e)
             {
-                //insert patient
-                $response = json_decode($ea_patientConnector->insertPatient($patient));
-                
-                $patient->id=$response->id;
-                //when inserting, make sure the patient association record is there
-                //if insert is called, create integration link
-                $patientService->insertPatientMapping($patient);
+                //record the error
             }
 
             print_r('Updated record for patient: ' . $patient->email);
