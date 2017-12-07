@@ -22,7 +22,7 @@ class PatientConnector extends RestAPI
         ));
 
         if ($response->getStatusCode()!=200)
-            throw new Exception();
+            throw new \Exception();
 
         return $response->getBody();
     }
