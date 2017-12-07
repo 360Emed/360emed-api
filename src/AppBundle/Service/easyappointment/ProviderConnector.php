@@ -19,6 +19,9 @@ class ProviderConnector extends RestAPI
         $response = $this->client->post($post_uri,array(
             'body' => \GuzzleHttp\json_encode($provider)
         ));
+        if ($response->getStatusCode()!=200)
+            throw new \Exception();
+
         return $response->getBody();
     }
 
@@ -28,6 +31,8 @@ class ProviderConnector extends RestAPI
         $response = $this->client->put($post_uri,array(
             'body' => \GuzzleHttp\json_encode($provider)
         ));
+        if ($response->getStatusCode()!=200)
+            throw new \Exception();
         return $response->getBody();
     }
 
@@ -36,7 +41,9 @@ class ProviderConnector extends RestAPI
         if ($provider->id==null)
             return null;
         $post_uri = '/index.php/api/v1/providers/' . $provider->id;
-        $response = $this->client->post($post_uri);
+        $response = $this->client->get($post_uri);
+        if ($response->getStatusCode()!=200)
+            throw new \Exception();
         return $response;
     }
 
@@ -44,6 +51,8 @@ class ProviderConnector extends RestAPI
     {
         $post_uri = '/index.php/api/v1/providers/' . $provider->id;
         $response = $this->client->delete($post_uri);
+        if ($response->getStatusCode()!=200)
+            throw new \Exception();
         return $response;
     }
 

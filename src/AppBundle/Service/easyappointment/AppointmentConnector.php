@@ -20,6 +20,9 @@ class AppointmentConnector extends RestAPI
             'body' => \GuzzleHttp\json_encode($appointment)
         ));
 
+        if ($response->getStatusCode()!=200)
+            throw new \Exception();
+        
         return $response->getBody();
     }
 
@@ -30,13 +33,18 @@ class AppointmentConnector extends RestAPI
             'body' => \GuzzleHttp\json_encode($appointment)
         ));
 
+        if ($response->getStatusCode()!=200)
+            throw new \Exception();
+
     }
 
     public function cancelAppointment(Appointment $appointment)
     {
         $delete_uri = '/index.php/api/v1/appointments/' . $appointment->id;
 
-        $this->client->delete($delete_uri);
+        $response = $this->client->delete($delete_uri);
+        if ($response->getStatusCode()!=200)
+            throw new \Exception();
     }
 
     public function getAppointment(Appointment $appointment)
@@ -46,6 +54,8 @@ class AppointmentConnector extends RestAPI
         $get_uri = '/index.php/api/v1/appointments/' . $appointment->id;
 
         $response = $this->client->get($get_uri);
+        if ($response->getStatusCode()!=200)
+            throw new \Exception();
         return $response->getBody();
     }
 }

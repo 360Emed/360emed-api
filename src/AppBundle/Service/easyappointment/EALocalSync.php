@@ -69,6 +69,8 @@ class EALocalSync extends RestAPI
                     //insert patient
                     $response = json_decode($ea_patientConnector->insertPatient($patient));
 
+                    
+
                     $patient->id=$response->id;
                     //when inserting, make sure the patient association record is there
                     //if insert is called, create integration link

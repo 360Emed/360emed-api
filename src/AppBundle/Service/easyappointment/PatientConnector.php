@@ -21,7 +21,9 @@ class PatientConnector extends RestAPI
             'body' => \GuzzleHttp\json_encode($patient)
         ));
 
-    
+        if ($response->getStatusCode()!=200)
+            throw new \Exception();
+
         return $response->getBody();
     }
 
@@ -32,6 +34,10 @@ class PatientConnector extends RestAPI
         $response = $this->client->put($post_uri,array(
             'body' => \GuzzleHttp\json_encode($patient)
         ));
+
+        if ($response->getStatusCode()!=200)
+            throw new \Exception();
+
         return $response->getBody();
     }
 
@@ -40,16 +46,23 @@ class PatientConnector extends RestAPI
         if ($patient->id==null)
             return null;
         $post_uri = '/index.php/api/v1/customers/' . $patient->id;
-        $request = $this->client->get($post_uri);
-        $response = $request->send();
+        $response = $this->client->get($post_uri);
+
+
+        if ($response->getStatusCode()!=200)
+            throw new \Exception();
+
         return $response->getBody();
     }
 
     public function deletePatient(Patient $patient)
     {
         $post_uri = '/index.php/api/v1/customers/' . $patient->id;
-        $request = $this->client->delete($post_uri);
-        $response = $request->send();
+        $response = $this->client->delete($post_uri);
+
+        if ($response->getStatusCode()!=200)
+            throw new \Exception();
+        
         return $response->getBody();
     }
 }
