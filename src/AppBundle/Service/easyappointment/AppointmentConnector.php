@@ -22,7 +22,7 @@ class AppointmentConnector extends RestAPI
 
         if ($response->getStatusCode()!=200)
             throw new \Exception();
-        
+
         return $response->getBody();
     }
 
@@ -54,7 +54,7 @@ class AppointmentConnector extends RestAPI
         $get_uri = '/index.php/api/v1/appointments/' . $appointment->id;
 
         $response = $this->client->get($get_uri);
-        if ($response->getStatusCode()!=200)
+        if ($response->getStatusCode()>=500)
             throw new \Exception();
         return $response->getBody();
     }

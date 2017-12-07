@@ -49,7 +49,7 @@ class PatientConnector extends RestAPI
         $response = $this->client->get($post_uri);
 
 
-        if ($response->getStatusCode()!=200)
+        if ($response->getStatusCode()>=500)
             throw new \Exception();
 
         return $response->getBody();

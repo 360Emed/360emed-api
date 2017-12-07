@@ -42,7 +42,7 @@ class ProviderConnector extends RestAPI
             return null;
         $post_uri = '/index.php/api/v1/providers/' . $provider->id;
         $response = $this->client->get($post_uri);
-        if ($response->getStatusCode()!=200)
+        if ($response->getStatusCode()>=500)
             throw new \Exception();
         return $response;
     }
