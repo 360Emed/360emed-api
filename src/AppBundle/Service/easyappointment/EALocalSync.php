@@ -69,7 +69,7 @@ class EALocalSync extends RestAPI
                     //insert patient
                     $response = json_decode($ea_patientConnector->insertPatient($patient));
 
-                    
+
 
                     $patient->id=$response->id;
                     //when inserting, make sure the patient association record is there
@@ -78,7 +78,7 @@ class EALocalSync extends RestAPI
                 }
 
             }
-            catch (Exception $e)
+            catch (\Exception $e)
             {
                 //record the error
             }
