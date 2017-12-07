@@ -26,8 +26,8 @@ class RestAPI
             'verify' => false,
             'timeout'  => 5.0,
             'auth' => [$this->username, $this->password],
-            'headers' => ['Content-Type' => 'application/json'],
-            'http_errors' => false
+            'headers' => ['Content-Type' => 'application/json']
+            //'http_errors' => false
         ]);
     }
 
