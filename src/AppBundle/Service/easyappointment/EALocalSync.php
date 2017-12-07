@@ -42,22 +42,22 @@ class EALocalSync extends RestAPI
         //loop through all patients
         foreach ($patients as $patient)
         {
-            $patientExists=false;
-            if ($patient->id!=null && $patient->id!='')
-            {
-                $result = $ea_patientConnector->getPatient($patient);
-                if ($result && $result->id!=null)
-                {
-                    //patient exists
-                    $patientExists=true;
-                }
-            }
-
-            $this->repairData($patient);
-
             //this is the process for loading the patients
             try
             {
+                $patientExists=false;
+                if ($patient->id!=null && $patient->id!='')
+                {
+                    $result = $ea_patientConnector->getPatient($patient);
+                    if ($result && $result->id!=null)
+                    {
+                        //patient exists
+                        $patientExists=true;
+                    }
+                }
+
+                $this->repairData($patient);
+
                 //update patient if patient exists
                 if ($patientExists)
                 {
@@ -80,14 +80,14 @@ class EALocalSync extends RestAPI
             }
             catch (\Exception $e)
             {
+                print_r($e->getMessage());
                 //record the error
             }
 
             print_r('Updated record for patient: ' . $patient->email);
 
         }
-
-
+        print_r('The sync for patients is completed.');
     }
 
     public function syncDoctors()
