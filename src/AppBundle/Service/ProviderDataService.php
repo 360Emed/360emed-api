@@ -78,7 +78,7 @@ class ProviderDataService implements iProviderDataService
     public function getAllProviders()
     {
         $this->sqlconnector = new ProviderConnector();
-        return $this->sqlconnector->getAllDoctors();
+        return $this->sqlconnector->getAllProviders();
     }
 
     public function insertProviderMapping(Provider $provider)
