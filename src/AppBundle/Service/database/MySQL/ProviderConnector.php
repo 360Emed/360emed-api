@@ -169,4 +169,17 @@ class ProviderConnector extends DBConnector
 
         return $providers;
     }
+
+    function generateMappingRecord($eaproviderID, $providerID)
+    {
+        //insert
+        $sql = "INSERT INTO provider_appointmentprovider (providerID, appointmentproviderID)
+                    VALUES (:providerID, :eaproviderID)";
+        $query = $this->pdo->prepare($sql);
+        // use exec() because no results are returned
+        $query->execute(array(
+            'providerID'=>$providerID,
+            'eaproviderID'=>$eaproviderID
+        ));
+    }
 }

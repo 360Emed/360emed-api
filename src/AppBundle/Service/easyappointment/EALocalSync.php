@@ -8,11 +8,12 @@
 
 namespace AppBundle\Service\easyappointment;
 
-use AppBundle\Service\database\MySQL\PatientConnector;
 use AppBundle\Service\easyappointment\PatientConnector as EAPatientConnector;
 use AppBundle\Service\model\Patient;
+use AppBundle\Service\model\Provider;
 use AppBundle\Service\PatientDataService;
 use AppBundle\Service\easyappointment\RestAPI;
+use AppBundle\Service\ProviderDataService;
 
 /**
  * This class sync all the existing content between Easy Appointment and local integration data
@@ -25,7 +26,7 @@ class EALocalSync extends RestAPI
 {
     public function syncAll()
     {
-        $this->syncDoctors();
+        $this->syncProviders();
         $this->syncPatients();
         $this->syncAppointments();
         $this->syncAvailability();
@@ -90,9 +91,62 @@ class EALocalSync extends RestAPI
         print_r('The sync for patients is completed.');
     }
 
-    public function syncDoctors()
+    public function syncProviders()
     {
         //loop through all doctors
+        $providerService = new ProviderDataService();
+        $providers = $providerService->getAllProviders();
+
+        $ea_providerConnector = new ProviderConnector();
+        //loop through all patients
+        foreach ($providers as $provider)
+        {
+            //this is the process for loading the patients
+            try
+            {
+                $providerExists=false;
+                if ($provider->id!=null && $provider->id!='')
+                {
+                    $result = $ea_providerConnector->getProvider($provider);
+                    if ($result && $result->id!=null)
+                    {
+                        //patient exists
+                        $providerExists=true;
+                    }
+                }
+
+                $this->repairData($patient);
+
+                //update patient if patient exists
+                if ($providerExists)
+                {
+                    //if integration link exists, call update api, if not, call insert api
+                    $ea_providerConnector->updateProvider($provider);
+                }
+                else
+                {
+                    //insert patient
+                    $response = json_decode($ea_providerConnector->insertProvider($provider));
+
+
+
+                    $provider->id=$response->id;
+                    //when inserting, make sure the patient association record is there
+                    //if insert is called, create integration link
+                    $providerService->insertProviderMapping($provider);
+                }
+
+            }
+            catch (\Exception $e)
+            {
+                print_r($e->getMessage());
+                //record the error
+            }
+
+            print_r('Updated record for provider: ' . $provider->email);
+
+        }
+        print_r('The sync for patients is completed.');
         //if integration link exists, call update api, if not, call insert api
         //if insert is called, create integration link
     }

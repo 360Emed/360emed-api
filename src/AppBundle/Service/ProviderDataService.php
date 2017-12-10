@@ -9,6 +9,7 @@
 namespace AppBundle\Service;
 
 use AppBundle\Service\database\MySQL\ProviderConnector;
+use AppBundle\Service\model\Provider;
 
 class ProviderDataService implements iProviderDataService
 {
@@ -74,9 +75,15 @@ class ProviderDataService implements iProviderDataService
         //implement logic to save data to ezy appointment
     }
 
-    public function getAllDoctors()
+    public function getAllProviders()
     {
         $this->sqlconnector = new ProviderConnector();
         return $this->sqlconnector->getAllDoctors();
+    }
+
+    public function insertProviderMapping(Provider $provider)
+    {
+        $this->sqlconnector=new ProviderConnector();
+        $this->sqlconnector->generateMappingRecord($provider->local_provider_id,$provider->id);
     }
 }
