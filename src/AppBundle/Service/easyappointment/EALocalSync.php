@@ -146,7 +146,7 @@ class EALocalSync extends RestAPI
             print_r('Updated record for provider: ' . $provider->email);
 
         }
-        print_r('The sync for patients is completed.');
+        print_r('The sync for provider is completed.');
         //if integration link exists, call update api, if not, call insert api
         //if insert is called, create integration link
     }

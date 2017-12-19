@@ -60,7 +60,7 @@ class ProviderDataService implements iProviderDataService
     {
         $this->sqlconnector=new ProviderConnector();
         $pid = $this->sqlconnector->insertDoctor($firstname, $lastname, $email, $did);
-        $this->sqlconnector->cleanScheduleData($pid);
+        //$this->sqlconnector->cleanScheduleData($pid);
         $this->sqlconnector->insertData($pid,$data,'APPOINTMENT');
     }
 
