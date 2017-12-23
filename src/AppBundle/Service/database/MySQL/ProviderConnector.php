@@ -10,6 +10,7 @@ namespace AppBundle\Service\database\MySQL;
 
 use AppBundle\Service\database\MySQL\Config;
 use AppBundle\Service\model\Provider;
+use AppBundle\Service\model\Schedule;
 
 class ProviderConnector extends DBConnector
 {
@@ -162,8 +163,6 @@ class ProviderConnector extends DBConnector
             $provider->local_provider_id = $row['id'];
 
             //provider needs to be associated with services
-
-
             $providers[] = $provider;
         }
 
@@ -181,5 +180,26 @@ class ProviderConnector extends DBConnector
             'providerID'=>$providerID,
             'eaproviderID'=>$eaproviderID
         ));
+    }
+
+    public function getProviderSchedule($eaproviderID, $startDate, $endDate)
+    {
+        //get the doctor id from provider ID in the join, then get the schedule based on the doctor id
+        $sql = "SELECT * FROM provider_appointmentprovider pa, provider p WHERE appointmentproviderID = :eaproviderID and pa.providerID = p.providerID and ";
+        $query = $this->pdo->prepare($sql);
+        $query->execute(array(
+            'eaproviderID'=>$eaproviderID
+        ));
+
+        $schedules = array();
+
+        //loop through data to get schedule data
+        while($row = $query->fetch()) {
+            //get the data in json form
+            $dataJson = json_decode($row['schedule_data']);
+            //create new schedule based on the json data
+            $schedule = new Schedule();
+
+        }
     }
 }

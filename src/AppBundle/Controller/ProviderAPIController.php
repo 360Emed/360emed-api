@@ -53,4 +53,24 @@ class ProviderAPIController extends Controller
 
     }
 
+    public function getProviderScheduleAction(Request $request, $providerID)
+    {
+        if (Validator::isRequestValid($request))
+        {
+            $this->doctorDataService = new ProviderDataService();
+
+            //get the schedule data and return as json body
+
+            $message = DataEncoder::createMessageJson("Doctor Schedule Updated");
+        }
+        else
+        {
+            $message = DataEncoder::createMessageJson(Validator::unauthorizedMsg);
+        }
+
+        return new Response(
+            $message
+        );
+
+    }
 }

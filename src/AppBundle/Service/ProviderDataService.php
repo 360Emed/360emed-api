@@ -86,4 +86,9 @@ class ProviderDataService implements iProviderDataService
         $this->sqlconnector=new ProviderConnector();
         $this->sqlconnector->generateMappingRecord($provider->local_provider_id,$provider->id);
     }
+
+    public function getProviderSchedule($providerID, $startDate, $endDate)
+    {
+        
+    }
 }
