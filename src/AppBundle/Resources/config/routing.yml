@@ -29,7 +29,7 @@
         _controller: AppBundle:Sync:syncEasyAppointment
         _method: GET
 360emed_schedule_api_getschedule:
-    path: /getdoctorschedule/{providerID}
+    path: /getdoctorschedule/{providerID}/{startDate}/{endDate}
     defaults:
         _controller: AppBundle:ProviderAPI:getProviderSchedule
         _method: GET

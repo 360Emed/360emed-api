@@ -15,5 +15,7 @@ class Schedule
     var $start;
     var $end;
     var $providerID;
-    var $serviceID;
+    var $eacategoryID;
+    var $eaproviderID;
+    var $facilityID;
 }

@@ -182,7 +182,17 @@ class ProviderConnector extends DBConnector
         ));
     }
 
-    public function getProviderSchedule($eaproviderID, $startDate, $endDate)
+    /**
+     * This function returns the schedule timeslot match between the date and time
+     * Date String format is mm/dd/yyyy
+     *
+     * @param $eaproviderID
+     * @param $eacategoryID
+     * @param $startDate
+     * @param $endDate
+     * @return array
+     */
+    public function getProviderSchedule($eaproviderID, $eacategoryID, $startDate, $endDate)
     {
         //get the doctor id from provider ID in the join, then get the schedule based on the doctor id
         $sql = "SELECT * FROM provider_appointmentprovider pa, provider p WHERE appointmentproviderID = :eaproviderID and pa.providerID = p.providerID and ";
@@ -195,11 +205,27 @@ class ProviderConnector extends DBConnector
 
         //loop through data to get schedule data
         while($row = $query->fetch()) {
+
             //get the data in json form
             $dataJson = json_decode($row['schedule_data']);
             //create new schedule based on the json data
             $schedule = new Schedule();
+            $schedule->start = $dataJson->slottimestart;
+            $schedule->end = $dataJson->slottimeend;
+            $schedule->id = $dataJson->apptslotid;
+            $schedule->providerID = $row['doctor_id'];
+            $schedule->eaproviderID = $eaproviderID;
+            $schedule->eacategoryID = $eacategoryID;
+
+            //validate datetime
+            if (strtotime($schedule->start)>=strtotime($startDate) && strtotime($schedule->end)<=strtotime($endDate))
+            {
+                $schedules[] = $schedule;
+            }
+
+
 
         }
+        return $schedules;
     }
 }
