@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab7d790d-38c2-4299-8d11-578f9dc708fd" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/config/routing.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Service/database/MySQL/ProviderConnector.php" afterPath="$PROJECT_DIR$/src/AppBundle/Service/database/MySQL/ProviderConnector.php" />
     </list>
     <ignored path="360emed-api.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProviderAPIController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProviderAPIController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ProviderAPIController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="60" column="98" selection-start-line="60" selection-start-column="98" selection-end-line="60" selection-end-column="98" />
+            <state relative-caret-position="302">
+              <caret line="62" column="32" selection-start-line="62" selection-start-column="32" selection-end-line="62" selection-end-column="32" />
               <folding>
                 <element signature="e#40#82#0#PHP" expanded="true" />
               </folding>
@@ -94,25 +94,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProviderConnector.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ProviderConnector.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/database/MySQL/ProviderConnector.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="499">
-              <caret line="215" column="37" selection-start-line="215" selection-start-column="37" selection-end-line="215" selection-end-column="37" />
+            <state relative-caret-position="139">
+              <caret line="211" column="208" selection-start-line="211" selection-start-column="208" selection-end-line="211" selection-end-column="208" />
               <folding>
                 <element signature="e#138#182#0#PHP" expanded="true" />
-                <marker date="1514161073000" expanded="true" signature="626:744" placeholder="SELECT id FR... patient" />
-                <marker date="1514161073000" expanded="true" signature="1315:1399" placeholder="SELECT id FR... patient" />
-                <marker date="1514161073000" expanded="true" signature="2218:2365" placeholder="INSERT INTO patient... " />
-                <marker date="1514161073000" expanded="true" signature="2897:2964" placeholder="DELETE FROM " />
-                <marker date="1514161073000" expanded="true" signature="2908:2964" placeholder="INSERT INTO schedule... " />
-                <marker date="1514161073000" expanded="true" signature="3366:3468" placeholder="INSERT INTO patient_data... " />
-                <marker date="1514161073000" expanded="true" signature="3859:3951" placeholder="SELECT * FRO... doctor" />
-                <marker date="1514161073000" expanded="true" signature="4751:4883" placeholder="INSERT INTO provider_appointmentprovider... " />
-                <marker date="1514161073000" expanded="true" signature="5198:5275" placeholder="SELECT categ... category_eacategory" />
-                <marker date="1514161073000" expanded="true" signature="6154:6288" placeholder="SELECT * FRO... provider_appointmentprovider" />
-                <marker date="1514161073000" expanded="true" signature="6154:6313" placeholder="SELECT * FRO... provider_appointmentprovider" />
-                <marker date="1514161073000" expanded="true" signature="6154:6345" placeholder="SELECT * FRO... provider_appointmentprovider" />
+                <marker date="1514164253000" expanded="true" signature="626:744" placeholder="SELECT id FR... patient" />
+                <marker date="1514164253000" expanded="true" signature="1315:1399" placeholder="SELECT id FR... patient" />
+                <marker date="1514164253000" expanded="true" signature="2218:2365" placeholder="INSERT INTO patient... " />
+                <marker date="1514164253000" expanded="true" signature="2897:2964" placeholder="DELETE FROM " />
+                <marker date="1514164253000" expanded="true" signature="2908:2964" placeholder="INSERT INTO schedule... " />
+                <marker date="1514164253000" expanded="true" signature="3366:3468" placeholder="INSERT INTO patient_data... " />
+                <marker date="1514164253000" expanded="true" signature="3859:3951" placeholder="SELECT * FRO... doctor" />
+                <marker date="1514164253000" expanded="true" signature="4751:4883" placeholder="INSERT INTO provider_appointmentprovider... " />
+                <marker date="1514164253000" expanded="true" signature="5198:5275" placeholder="SELECT categ... category_eacategory" />
+                <marker date="1514164253000" expanded="true" signature="6154:6288" placeholder="SELECT * FRO... provider_appointmentprovider" />
+                <marker date="1514164253000" expanded="true" signature="6154:6314" placeholder="SELECT * FRO... provider_appointmentprovider" />
+                <marker date="1514164253000" expanded="true" signature="6154:6348" placeholder="SELECT * FRO... provider_appointmentprovider" />
               </folding>
             </state>
           </provider>
@@ -197,8 +197,8 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Service/model/Schedule.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Service/ProviderDataService.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/ProviderAPIController.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Service/database/MySQL/ProviderConnector.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/config/routing.yml" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Service/database/MySQL/ProviderConnector.php" />
       </list>
     </option>
   </component>
@@ -590,12 +590,12 @@
       <workItem from="1512609680849" duration="6752000" />
       <workItem from="1512873130709" duration="1689000" />
       <workItem from="1513637413324" duration="1491000" />
-      <workItem from="1513975147947" duration="5136000" />
+      <workItem from="1513975147947" duration="6288000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62036000" />
+    <option name="totallyTimeSpent" value="63188000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="708" extended-state="6" />
@@ -606,18 +606,18 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286385" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -965,16 +965,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/easyappointment/ProviderConnector.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="53" column="26" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="26" />
-          <folding>
-            <element signature="e#141#178#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/easyappointment/PatientConnector.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -1023,28 +1013,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/database/MySQL/ProviderConnector.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="215" column="37" selection-start-line="215" selection-start-column="37" selection-end-line="215" selection-end-column="37" />
-          <folding>
-            <element signature="e#138#182#0#PHP" expanded="true" />
-            <marker date="1514161073000" expanded="true" signature="626:744" placeholder="SELECT id FR... patient" />
-            <marker date="1514161073000" expanded="true" signature="1315:1399" placeholder="SELECT id FR... patient" />
-            <marker date="1514161073000" expanded="true" signature="2218:2365" placeholder="INSERT INTO patient... " />
-            <marker date="1514161073000" expanded="true" signature="2897:2964" placeholder="DELETE FROM " />
-            <marker date="1514161073000" expanded="true" signature="2908:2964" placeholder="INSERT INTO schedule... " />
-            <marker date="1514161073000" expanded="true" signature="3366:3468" placeholder="INSERT INTO patient_data... " />
-            <marker date="1514161073000" expanded="true" signature="3859:3951" placeholder="SELECT * FRO... doctor" />
-            <marker date="1514161073000" expanded="true" signature="4751:4883" placeholder="INSERT INTO provider_appointmentprovider... " />
-            <marker date="1514161073000" expanded="true" signature="5198:5275" placeholder="SELECT categ... category_eacategory" />
-            <marker date="1514161073000" expanded="true" signature="6154:6288" placeholder="SELECT * FRO... provider_appointmentprovider" />
-            <marker date="1514161073000" expanded="true" signature="6154:6313" placeholder="SELECT * FRO... provider_appointmentprovider" />
-            <marker date="1514161073000" expanded="true" signature="6154:6345" placeholder="SELECT * FRO... provider_appointmentprovider" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
@@ -1055,10 +1023,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ProviderAPIController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="60" column="98" selection-start-line="60" selection-start-column="98" selection-end-line="60" selection-end-column="98" />
+        <state relative-caret-position="302">
+          <caret line="62" column="32" selection-start-line="62" selection-start-column="32" selection-end-line="62" selection-end-column="32" />
           <folding>
             <element signature="e#40#82#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/easyappointment/ProviderConnector.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="557">
+          <caret line="53" column="26" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="26" />
+          <folding>
+            <element signature="e#141#178#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/database/MySQL/ProviderConnector.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="211" column="208" selection-start-line="211" selection-start-column="208" selection-end-line="211" selection-end-column="208" />
+          <folding>
+            <element signature="e#138#182#0#PHP" expanded="true" />
+            <marker date="1514164253000" expanded="true" signature="626:744" placeholder="SELECT id FR... patient" />
+            <marker date="1514164253000" expanded="true" signature="1315:1399" placeholder="SELECT id FR... patient" />
+            <marker date="1514164253000" expanded="true" signature="2218:2365" placeholder="INSERT INTO patient... " />
+            <marker date="1514164253000" expanded="true" signature="2897:2964" placeholder="DELETE FROM " />
+            <marker date="1514164253000" expanded="true" signature="2908:2964" placeholder="INSERT INTO schedule... " />
+            <marker date="1514164253000" expanded="true" signature="3366:3468" placeholder="INSERT INTO patient_data... " />
+            <marker date="1514164253000" expanded="true" signature="3859:3951" placeholder="SELECT * FRO... doctor" />
+            <marker date="1514164253000" expanded="true" signature="4751:4883" placeholder="INSERT INTO provider_appointmentprovider... " />
+            <marker date="1514164253000" expanded="true" signature="5198:5275" placeholder="SELECT categ... category_eacategory" />
+            <marker date="1514164253000" expanded="true" signature="6154:6288" placeholder="SELECT * FRO... provider_appointmentprovider" />
+            <marker date="1514164253000" expanded="true" signature="6154:6314" placeholder="SELECT * FRO... provider_appointmentprovider" />
+            <marker date="1514164253000" expanded="true" signature="6154:6348" placeholder="SELECT * FRO... provider_appointmentprovider" />
           </folding>
         </state>
       </provider>
