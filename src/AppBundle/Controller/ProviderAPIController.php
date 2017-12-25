@@ -53,12 +53,12 @@ class ProviderAPIController extends Controller
 
     }
 
-    public function getProviderScheduleAction(Request $request, $providerID, $startDate, $endDate)
+    public function getProviderScheduleAction(Request $request, $categoryID, $providerID, $startDate, $endDate)
     {
         if (Validator::isRequestValid($request))
         {
             $this->doctorDataService = new ProviderDataService();
-            $schedulData = $this->doctorDataService->getProviderSchedule($providerID, $startDate, $endDate);
+            $schedulData = $this->doctorDataService->getProviderSchedule($providerID, $categoryID, $startDate, $endDate);
             //get the schedule data and return as json body
             $message = \json_encode($schedulData);
         }
