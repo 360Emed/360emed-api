@@ -195,7 +195,7 @@ class ProviderConnector extends DBConnector
     public function getProviderSchedule($eaproviderID, $eacategoryID, $startDate, $endDate)
     {
         //get the doctor id from provider ID in the join, then get the schedule based on the doctor id
-        $sql = "SELECT * FROM provider_appointmentprovider pa, provider p WHERE appointmentproviderID = :eaproviderID and pa.providerID = p.providerID and ";
+        $sql = "SELECT * FROM provider_appointmentprovider pa, provider p WHERE appointmentproviderID = :eaproviderID and pa.providerID = p.providerID";
         $query = $this->pdo->prepare($sql);
         $query->execute(array(
             'eaproviderID'=>$eaproviderID
