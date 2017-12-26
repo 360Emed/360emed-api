@@ -120,7 +120,7 @@ class EALocalSync extends RestAPI
                 if ($provider->id!=null && $provider->id!='')
                 {
                     $result = $ea_providerConnector->getProvider($provider);
-                   
+
                     if ($result && $result->id!=null)
                     {
                         //patient exists
