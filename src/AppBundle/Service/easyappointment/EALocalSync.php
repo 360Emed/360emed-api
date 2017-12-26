@@ -27,7 +27,7 @@ class EALocalSync extends RestAPI
     public function syncAll()
     {
         $this->syncProviders();
-        $this->syncPatients();
+        //$this->syncPatients();
         $this->syncAppointments();
         $this->syncAvailability();
     }
@@ -115,8 +115,6 @@ class EALocalSync extends RestAPI
                     }
                 }
 
-                $this->repairData($patient);
-
                 //update patient if patient exists
                 if ($providerExists)
                 {
@@ -128,12 +126,12 @@ class EALocalSync extends RestAPI
                     //insert patient
                     $response = json_decode($ea_providerConnector->insertProvider($provider));
 
-
-
                     $provider->id=$response->id;
                     //when inserting, make sure the patient association record is there
                     //if insert is called, create integration link
                     $providerService->insertProviderMapping($provider);
+
+                    print_r($response);
                 }
 
             }
