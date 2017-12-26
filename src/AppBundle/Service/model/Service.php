@@ -19,5 +19,5 @@ class Service
     var $description;
     var $availabilitiesType;
     var $attendantsNumber;
-    var $categoryId;
+    var $emrserviceId;
 }

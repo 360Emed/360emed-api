@@ -15,6 +15,7 @@ use AppBundle\Service\model\Settings;
 use AppBundle\Service\PatientDataService;
 use AppBundle\Service\easyappointment\RestAPI;
 use AppBundle\Service\ProviderDataService;
+use AppBundle\Service\ServiceDataService;
 
 /**
  * This class sync all the existing content between Easy Appointment and local integration data
@@ -30,11 +31,15 @@ class EALocalSync extends RestAPI
     public function syncAll()
     {
         $this->syncProviders();
+        $this->syncCategories();
         //$this->syncPatients();
-        $this->syncAppointments();
-        $this->syncAvailability();
+        //$this->syncAppointments();
+        //$this->syncAvailability();
     }
 
+    /**
+     * Sync the patients from the patient api database to easy appointment
+     */
     public function syncPatients()
     {
         //initialize patient services
@@ -94,6 +99,9 @@ class EALocalSync extends RestAPI
         print_r('The sync for patients is completed.');
     }
 
+    /**
+     * Sync all providers from api local database to easyappointment
+     */
     public function syncProviders()
     {
         //loop through all doctors
@@ -118,10 +126,7 @@ class EALocalSync extends RestAPI
                     }
 
                 }
-
                 $this->repairProviderData($provider);
-
-
                 //update patient if patient exists
                 if ($providerExists)
                 {
@@ -131,16 +136,12 @@ class EALocalSync extends RestAPI
                 }
                 else
                 {
-                    print_r("inserting provider");
                     //insert provider
                     $response = json_decode($ea_providerConnector->insertProvider($provider));
-
                     $provider->id=$response->id;
-                    print_r("Updating provider id:" . $provider->id);
                     //when inserting, make sure the patient association record is there
                     //if insert is called, create integration link
                     $providerService->insertProviderMapping($provider);
-
 
                 }
 
@@ -159,6 +160,36 @@ class EALocalSync extends RestAPI
         //if insert is called, create integration link
     }
 
+    public function syncCategories()
+    {
+        //get the services classes instantiated
+        $serviceConnector = new CategoryConnector();
+        //get all categories
+        $categoryService = new ServiceDataService();
+        //loop through and check if mapping exists in current db
+        $services = $categoryService->getAllServices();
+
+        foreach ($services as $service)
+        {
+            //if yes, update the category in easyappointment with new name, etc.
+            if ($categoryID = $categoryService->checkServiceMappingExists($service->id)!==false)
+            {
+                $service->id = $categoryID;
+                $serviceConnector->updateCategory($service);
+            }
+            else
+            {
+                //if no, insert category in easyappointment, get the id, and then insert the mapping here
+                $response = json_decode($serviceConnector->insertCategory($service));
+                $service->id = $response->id;
+                $categoryService->generateMapping($service->id,$service->emrserviceID ,$service->name);
+            }
+
+        }
+
+    }
+
+
     public function syncAvailability()
     {
         //not sure how this works yet, need to figure it out
@@ -171,6 +202,10 @@ class EALocalSync extends RestAPI
         //if insert is called, create integration link
     }
 
+    /**
+     * perform data augmentation to allow data sync to easy appointment correctly for patient data
+     * @param $patient
+     */
     public function repairPatientData(&$patient)
     {
         //fix patient data fields
@@ -178,8 +213,6 @@ class EALocalSync extends RestAPI
             $patient->phone='000-000-0000';
         if ($patient->email=='None')
             $patient->email=$patient->local_patient_id . '-default@360emed.hmtrevolution.com';
-
-
     }
 
     /**
@@ -193,7 +226,6 @@ class EALocalSync extends RestAPI
             $provider->phone='000-000-0000';
         if ($provider->email=='')
             $provider->email=$provider->local_provider_id . '-provider-default@360emed.hmtrevolution.com';
-
 
         //add the default service for sync
         $services = array();

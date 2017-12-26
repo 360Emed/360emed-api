@@ -25,10 +25,7 @@ class ProviderConnector extends DBConnector
      */
     function checkDoctorExists($firstname, $lastname, $email)
     {
-        if ($this->pdo == null)
-        {
-            $this->init();
-        }
+
         $sql = "SELECT id FROM doctor
                     WHERE first_name=:FIRSTNAME and last_name=:LASTNAME and email=:EMAIL LIMIT 1";
         $query = $this->pdo->prepare($sql);
@@ -48,10 +45,7 @@ class ProviderConnector extends DBConnector
 
     function checkDoctorExistsByHospitalDoctorID($doctorid)
     {
-        if ($this->pdo == null)
-        {
-            $this->init();
-        }
+        
         $sql = "SELECT id FROM doctor
                     WHERE hospital_doctor_id=:DOCTORID LIMIT 1";
         $query = $this->pdo->prepare($sql);
@@ -78,12 +72,7 @@ class ProviderConnector extends DBConnector
      */
     function insertDoctor($firstname, $lastname, $email, $pid)
     {
-        if ($this->pdo == null)
-        {
-            $this->init();
-        }
-
-        $patientID = $this->checkDoctorExistsByHospitalDoctorID($pid);
+       $patientID = $this->checkDoctorExistsByHospitalDoctorID($pid);
 
         if ($patientID !==false)
             return $patientID;
@@ -183,27 +172,7 @@ class ProviderConnector extends DBConnector
         ));
     }
 
-    /**
-     *
-     *
-     * SELECT * FROM provider_appointmentprovider pa, doctor p, schedule s WHERE appointmentproviderID = 92 and pa.providerID = p.ID and s.doctor_id = p.id and schedule_data like '%"facilityid":"501"%'
-     * @param $eacategoryID
-     * @return mixed
-     *
-     *
-     */
-    public function getFacilityIDByCategoryID($eacategoryID)
-    {
-        $sql = "SELECT categoryID FROM category_eacategory WHERE eacategoryID = :eacategoryID";
-        $query = $this->pdo->prepare($sql);
-        $query->execute(array(
-            'eacategoryID'=>$eacategoryID
-        ));
-        //loop through data to get schedule data
-        while($row = $query->fetch()) {
-            return $row['categoryID'];
-        }
-    }
+   
     /**
      * This function returns the schedule timeslot match between the date and time
      * Date String format is mm/dd/yyyy
@@ -217,7 +186,9 @@ class ProviderConnector extends DBConnector
     public function getProviderSchedule($eaproviderID, $eacategoryID, $startDate, $endDate)
     {
         //get the facility ID by categoryID
-        $facilityID = $this->getFacilityIDByCategoryID($eacategoryID);
+        $srv_conn = new ServiceConnector();
+
+        $facilityID = $srv_conn->getFacilityIDByCategoryID($eacategoryID);
         //get the doctor id from provider ID in the join, then get the schedule based on the doctor id
         $sql = "SELECT * FROM provider_appointmentprovider pa, doctor p, schedule s WHERE appointmentproviderID = :eaproviderID and pa.providerID = p.ID and s.doctor_id = p.id and schedule_data LIKE :facilityID";
         $query = $this->pdo->prepare($sql);

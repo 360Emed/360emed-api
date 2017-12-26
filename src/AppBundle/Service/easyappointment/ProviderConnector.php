@@ -64,6 +64,6 @@ class ProviderConnector extends RestAPI
      */
     public function blockTimeSlot($blocking_appointment)
     {
-
+        //tbd
     }
 }
