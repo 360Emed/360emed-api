@@ -11,6 +11,7 @@ namespace AppBundle\Service\easyappointment;
 use AppBundle\Service\easyappointment\PatientConnector as EAPatientConnector;
 use AppBundle\Service\model\Patient;
 use AppBundle\Service\model\Provider;
+use AppBundle\Service\model\Settings;
 use AppBundle\Service\PatientDataService;
 use AppBundle\Service\easyappointment\RestAPI;
 use AppBundle\Service\ProviderDataService;
@@ -24,6 +25,8 @@ use AppBundle\Service\ProviderDataService;
  */
 class EALocalSync extends RestAPI
 {
+    var $default_service = 13;
+
     public function syncAll()
     {
         $this->syncProviders();
@@ -178,14 +181,30 @@ class EALocalSync extends RestAPI
 
 
     }
+
+    /**
+     * repair provider data
+     * @param Provider $provider
+     */
     public function repairProviderData(Provider &$provider)
     {
         //fix patient data fields
         if ($provider->phone==null)
             $provider->phone='000-000-0000';
-        if ($provider->email=='None')
-            $provider->email=$provider->id . '-provider-default@360emed.hmtrevolution.com';
+        if ($provider->email=='')
+            $provider->email=$provider->local_provider_id . '-provider-default@360emed.hmtrevolution.com';
 
+
+        //add the default service for sync
+        $services = array();
+        $services[] = $this->default_service;
+
+        $provider->services = $services;
+
+        $settings = new Settings();
+        $settings->username = $provider->firstName . "." . $provider->lastName . $provider->local_provider_id;
+
+        $provider->settings = $settings;
 
     }
 

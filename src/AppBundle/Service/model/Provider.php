@@ -26,4 +26,6 @@ class Provider
     var $local_provider_id;
     //array of service IDs only
     var $services;
+    //this is eaappointment specific model attributes
+    var $settings;
 }

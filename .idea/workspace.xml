@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab7d790d-38c2-4299-8d11-578f9dc708fd" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Service/model/Settings.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Service/easyappointment/EALocalSync.php" afterPath="$PROJECT_DIR$/src/AppBundle/Service/easyappointment/EALocalSync.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Service/easyappointment/ProviderConnector.php" afterPath="$PROJECT_DIR$/src/AppBundle/Service/easyappointment/ProviderConnector.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Service/model/Provider.php" afterPath="$PROJECT_DIR$/src/AppBundle/Service/model/Provider.php" />
     </list>
     <ignored path="360emed-api.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,11 +27,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="EALocalSync.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EALocalSync.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/easyappointment/EALocalSync.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="118" column="33" selection-start-line="118" selection-start-column="33" selection-end-line="118" selection-end-column="33" />
+            <state relative-caret-position="407">
+              <caret line="204" column="55" selection-start-line="204" selection-start-column="55" selection-end-line="204" selection-end-column="55" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Provider.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/model/Provider.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Settings.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/model/Settings.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Service.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/model/Service.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -94,7 +126,6 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/SyncController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Service/database/MySQL/Config.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Service/model/Patient.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Service/model/Provider.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Service/database/MySQL/PatientConnector.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Service/easyappointment/PatientConnector.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Service/easyappointment/AppointmentConnector.php" />
@@ -105,6 +136,8 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Service/database/MySQL/ProviderConnector.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Service/easyappointment/ProviderConnector.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Service/model/Settings.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Service/model/Provider.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Service/easyappointment/EALocalSync.php" />
       </list>
     </option>
@@ -498,12 +531,12 @@
       <workItem from="1512873130709" duration="1689000" />
       <workItem from="1513637413324" duration="1491000" />
       <workItem from="1513975147947" duration="8260000" />
-      <workItem from="1514255184819" duration="3163000" />
+      <workItem from="1514255184819" duration="3967000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68323000" />
+    <option name="totallyTimeSpent" value="69127000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="708" extended-state="6" />
@@ -546,13 +579,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/AppBundle.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -778,13 +804,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/model/Service.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/database/MySQL/Config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -803,14 +822,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="452">
           <caret line="57" column="35" selection-start-line="57" selection-start-column="35" selection-end-line="57" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/model/Provider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -960,10 +971,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/model/Service.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/easyappointment/EALocalSync.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="118" column="33" selection-start-line="118" selection-start-column="33" selection-end-line="118" selection-end-column="33" />
+        <state relative-caret-position="407">
+          <caret line="204" column="55" selection-start-line="204" selection-start-column="55" selection-end-line="204" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/model/Settings.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/model/Provider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
           <folding />
         </state>
       </provider>
