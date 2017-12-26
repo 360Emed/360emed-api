@@ -23,7 +23,7 @@ class PatientConnector extends RestAPI
         if ($response->getStatusCode()>299)
             throw new \Exception();
 
-        return $response->getBody();
+        return $response->getBody()->getContents();
     }
 
     public function updatePatient(Patient $patient)
@@ -36,7 +36,7 @@ class PatientConnector extends RestAPI
         if ($response->getStatusCode()>299)
             throw new \Exception();
 
-        return $response->getBody();
+        return $response->getBody()->getContents();
     }
 
     public function getPatient(Patient $patient)
@@ -50,7 +50,7 @@ class PatientConnector extends RestAPI
         if ($response->getStatusCode()>=500)
             throw new \Exception();
 
-        return $response->getBody();
+        return $response->getBody()->getContents();
     }
 
     public function deletePatient(Patient $patient)
@@ -61,6 +61,6 @@ class PatientConnector extends RestAPI
         if ($response->getStatusCode()>299)
             throw new \Exception();
 
-        return $response->getBody();
+        return $response->getBody()->getContents();
     }
 }

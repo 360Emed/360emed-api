@@ -22,7 +22,7 @@ class ServiceConnector extends RestAPI
         if ($response->getStatusCode()>299)
             throw new \Exception("Bad Status Code:" . $response->getStatusCode());
 
-        return $response->getBody();
+        return $response->getBody()->getContents();
     }
 
     public function updateService(Service $service)
@@ -34,7 +34,7 @@ class ServiceConnector extends RestAPI
         ));
         if ($response->getStatusCode()>299)
             throw new \Exception();
-        return $response->getBody();
+        return $response->getBody()->getContents();
     }
 
     public function getService(Service $service)
@@ -45,7 +45,7 @@ class ServiceConnector extends RestAPI
         $response = $this->client->get($post_uri);
         if ($response->getStatusCode()>=500)
             throw new \Exception();
-        return $response->getBody();
+        return $response->getBody()->getContents();
     }
 
     public function deleteService(Service $service)
@@ -54,6 +54,6 @@ class ServiceConnector extends RestAPI
         $response = $this->client->delete($post_uri);
         if ($response->getStatusCode() > 299)
             throw new \Exception();
-        return $response->getBody();
+        return $response->getBody()->getContents();
     }
 }

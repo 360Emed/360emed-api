@@ -23,7 +23,7 @@ class ProviderConnector extends RestAPI
         if ($response->getStatusCode()>299)
             throw new \Exception("Bad Status Code:" . $response->getStatusCode());
 
-        return $response->getBody();
+        return $response->getBody()->getContents();
     }
 
     public function updateProvider(Provider $provider)
@@ -35,7 +35,7 @@ class ProviderConnector extends RestAPI
         ));
         if ($response->getStatusCode()>299)
             throw new \Exception();
-        return $response->getBody();
+        return $response->getBody()->getContents();
     }
 
     public function getProvider(Provider $provider)
@@ -46,7 +46,7 @@ class ProviderConnector extends RestAPI
         $response = $this->client->get($post_uri);
         if ($response->getStatusCode()>=500)
             throw new \Exception();
-        return $response->getBody();
+        return $response->getBody()->getContents();
     }
 
     public function deleteProvider(Provider $provider)
@@ -55,7 +55,7 @@ class ProviderConnector extends RestAPI
         $response = $this->client->delete($post_uri);
         if ($response->getStatusCode()>299)
             throw new \Exception();
-        return $response;
+        return $response->getBody()->getContents();
     }
 
     /**
