@@ -40,13 +40,13 @@ class ProviderConnector extends RestAPI
 
     public function getProvider(Provider $provider)
     {
-        print_r($provider);
+        
         if ($provider->id==null)
             return null;
         $post_uri = '/index.php/api/v1/providers/' . $provider->id;
         $response = $this->client->get($post_uri);
         if ($response->getStatusCode()>=500)
-            throw new \Exception();
+            throw new \Exception('Bad EA API Call to get provider');
         return $response->getBody()->getContents();
     }
 
