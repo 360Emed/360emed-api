@@ -171,6 +171,7 @@ class ProviderConnector extends DBConnector
 
     function generateMappingRecord($eaproviderID, $providerID)
     {
+        print_r("inserting mapping record");
         //insert
         $sql = "INSERT INTO provider_appointmentprovider (providerID, appointmentproviderID)
                     VALUES (:providerID, :eaproviderID)";

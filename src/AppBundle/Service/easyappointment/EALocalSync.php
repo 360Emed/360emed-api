@@ -118,8 +118,7 @@ class EALocalSync extends RestAPI
                     }
 
                 }
-
-                print_r($provider);
+                
                 $this->repairProviderData($provider);
 
 
