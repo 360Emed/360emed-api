@@ -239,7 +239,7 @@ class EALocalSync extends RestAPI
 
         //load all service ids for the provider
         $providerService = new ProviderDataService();
-        $services[] = $providerService->getEASeviceIDsByProviderID($provider->local_provider_id);
+        $services = $providerService->getEASeviceIDsByProviderID($provider->local_provider_id);
 
         //save it
         $provider->services = $services;
