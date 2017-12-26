@@ -34,7 +34,7 @@ class ServiceConnector extends DBConnector
 
     public function getEAServiceIDByFacilityID($facilityID)
     {
-        $sql = "SELECT categoryID FROM category_eacategory WHERE categoryID = :categoryID LIMIT 1";
+        $sql = "SELECT * FROM category_eacategory WHERE categoryID = :categoryID LIMIT 1";
         $query = $this->pdo->prepare($sql);
         $query->execute(array(
             'categoryID'=>$facilityID
