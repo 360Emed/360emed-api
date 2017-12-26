@@ -230,7 +230,7 @@ class ProviderConnector extends DBConnector
         $query = $this->pdo->prepare($sql);
         $query->execute(array(
             'eaproviderID'=>$eaproviderID,
-            'facilityID'=>"'%\"facilityid\":\"". $facilityID . "\"%'"
+            'facilityID'=>"%\"facilityid\":\"". $facilityID . "\"%"
         ));
 
         $schedules = array();
