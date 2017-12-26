@@ -131,7 +131,7 @@ class EALocalSync extends RestAPI
                 }
                 else
                 {
-                    //print_r("inserting provider");
+                    print_r("inserting provider");
                     //insert provider
                     $response = json_decode($ea_providerConnector->insertProvider($provider));
 
