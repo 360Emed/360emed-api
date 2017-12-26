@@ -233,7 +233,6 @@ class ProviderConnector extends DBConnector
             'facilityID'=>"'%\"facilityid\":\"". $facilityID . "\"%'"
         ));
 
-        print_r($eaproviderID . ':' . $facilityID);
         $schedules = array();
 
         //loop through data to get schedule data
@@ -250,6 +249,7 @@ class ProviderConnector extends DBConnector
             $schedule->eaproviderID = $eaproviderID;
             $schedule->eacategoryID = $eacategoryID;
 
+            print_r($schedule);
             //validate datetime
             if (strtotime($schedule->start)>=strtotime($startDate) && strtotime($schedule->end)<=strtotime($endDate))
             {
