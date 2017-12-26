@@ -27,6 +27,7 @@ class ServiceConnector extends RestAPI
 
     public function updateService(Service $service)
     {
+        print_r( \GuzzleHttp\json_encode($service));
         $post_uri = '/index.php//api/v1/services/' . $service->id;
         $response = $this->client->put($post_uri,array(
             'body' => \GuzzleHttp\json_encode($service)
