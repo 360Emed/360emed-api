@@ -114,8 +114,8 @@ class EALocalSync extends RestAPI
         foreach ($providers as $provider)
         {
             //this is the process for loading the patients
-            try
-            {
+            //try
+            //{
                 $providerExists=false;
                 if ($provider->id!=null && $provider->id!='')
                 {
@@ -147,12 +147,12 @@ class EALocalSync extends RestAPI
 
                 }
 
-            }
-            catch (\Exception $e)
-            {
-                print_r($e->getMessage());
+            //}
+            //catch (\Exception $e)
+            //{
+            //    print_r($e->getMessage());
                 //record the error
-            }
+            //}
 
            // print_r('Updated record for provider: ' . $provider->email);
 
