@@ -97,22 +97,22 @@
       <file leaf-file-name="ProviderConnector.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/database/MySQL/ProviderConnector.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="217" column="0" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
+            <state relative-caret-position="184">
+              <caret line="211" column="155" selection-start-line="211" selection-start-column="155" selection-end-line="211" selection-end-column="155" />
               <folding>
                 <element signature="e#138#182#0#PHP" expanded="true" />
-                <marker date="1514255429000" expanded="true" signature="626:744" placeholder="SELECT id FR... patient" />
-                <marker date="1514255429000" expanded="true" signature="1315:1399" placeholder="SELECT id FR... patient" />
-                <marker date="1514255429000" expanded="true" signature="2218:2365" placeholder="INSERT INTO patient... " />
-                <marker date="1514255429000" expanded="true" signature="2897:2964" placeholder="DELETE FROM " />
-                <marker date="1514255429000" expanded="true" signature="2908:2964" placeholder="INSERT INTO schedule... " />
-                <marker date="1514255429000" expanded="true" signature="3366:3468" placeholder="INSERT INTO patient_data... " />
-                <marker date="1514255429000" expanded="true" signature="3859:3951" placeholder="SELECT * FRO... doctor" />
-                <marker date="1514255429000" expanded="true" signature="4751:4883" placeholder="INSERT INTO provider_appointmentprovider... " />
-                <marker date="1514255429000" expanded="true" signature="5198:5275" placeholder="SELECT categ... category_eacategory" />
-                <marker date="1514255429000" expanded="true" signature="6154:6278" placeholder="SELECT * FRO... provider_appointmentprovider" />
-                <marker date="1514255429000" expanded="true" signature="6154:6301" placeholder="SELECT * FRO... provider_appointmentprovider" />
-                <marker date="1514255429000" expanded="true" signature="6154:6312" placeholder="SELECT * FRO... provider_appointmentprovider" />
+                <marker date="1514255565000" expanded="true" signature="626:744" placeholder="SELECT id FR... patient" />
+                <marker date="1514255565000" expanded="true" signature="1315:1399" placeholder="SELECT id FR... patient" />
+                <marker date="1514255565000" expanded="true" signature="2218:2365" placeholder="INSERT INTO patient... " />
+                <marker date="1514255565000" expanded="true" signature="2897:2964" placeholder="DELETE FROM " />
+                <marker date="1514255565000" expanded="true" signature="2908:2964" placeholder="INSERT INTO schedule... " />
+                <marker date="1514255565000" expanded="true" signature="3366:3468" placeholder="INSERT INTO patient_data... " />
+                <marker date="1514255565000" expanded="true" signature="3859:3951" placeholder="SELECT * FRO... doctor" />
+                <marker date="1514255565000" expanded="true" signature="4751:4883" placeholder="INSERT INTO provider_appointmentprovider... " />
+                <marker date="1514255565000" expanded="true" signature="5198:5275" placeholder="SELECT categ... category_eacategory" />
+                <marker date="1514255565000" expanded="true" signature="6154:6278" placeholder="SELECT * FRO... provider_appointmentprovider" />
+                <marker date="1514255565000" expanded="true" signature="6154:6302" placeholder="SELECT * FRO... provider_appointmentprovider" />
+                <marker date="1514255565000" expanded="true" signature="6154:6313" placeholder="SELECT * FRO... provider_appointmentprovider" />
               </folding>
             </state>
           </provider>
@@ -591,12 +591,12 @@
       <workItem from="1512873130709" duration="1689000" />
       <workItem from="1513637413324" duration="1491000" />
       <workItem from="1513975147947" duration="8260000" />
-      <workItem from="1514255184819" duration="268000" />
+      <workItem from="1514255184819" duration="382000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65428000" />
+    <option name="totallyTimeSpent" value="65542000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="708" extended-state="6" />
@@ -1017,22 +1017,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/database/MySQL/ProviderConnector.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="217" column="0" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
+        <state relative-caret-position="184">
+          <caret line="211" column="155" selection-start-line="211" selection-start-column="155" selection-end-line="211" selection-end-column="155" />
           <folding>
             <element signature="e#138#182#0#PHP" expanded="true" />
-            <marker date="1514255429000" expanded="true" signature="626:744" placeholder="SELECT id FR... patient" />
-            <marker date="1514255429000" expanded="true" signature="1315:1399" placeholder="SELECT id FR... patient" />
-            <marker date="1514255429000" expanded="true" signature="2218:2365" placeholder="INSERT INTO patient... " />
-            <marker date="1514255429000" expanded="true" signature="2897:2964" placeholder="DELETE FROM " />
-            <marker date="1514255429000" expanded="true" signature="2908:2964" placeholder="INSERT INTO schedule... " />
-            <marker date="1514255429000" expanded="true" signature="3366:3468" placeholder="INSERT INTO patient_data... " />
-            <marker date="1514255429000" expanded="true" signature="3859:3951" placeholder="SELECT * FRO... doctor" />
-            <marker date="1514255429000" expanded="true" signature="4751:4883" placeholder="INSERT INTO provider_appointmentprovider... " />
-            <marker date="1514255429000" expanded="true" signature="5198:5275" placeholder="SELECT categ... category_eacategory" />
-            <marker date="1514255429000" expanded="true" signature="6154:6278" placeholder="SELECT * FRO... provider_appointmentprovider" />
-            <marker date="1514255429000" expanded="true" signature="6154:6301" placeholder="SELECT * FRO... provider_appointmentprovider" />
-            <marker date="1514255429000" expanded="true" signature="6154:6312" placeholder="SELECT * FRO... provider_appointmentprovider" />
+            <marker date="1514255565000" expanded="true" signature="626:744" placeholder="SELECT id FR... patient" />
+            <marker date="1514255565000" expanded="true" signature="1315:1399" placeholder="SELECT id FR... patient" />
+            <marker date="1514255565000" expanded="true" signature="2218:2365" placeholder="INSERT INTO patient... " />
+            <marker date="1514255565000" expanded="true" signature="2897:2964" placeholder="DELETE FROM " />
+            <marker date="1514255565000" expanded="true" signature="2908:2964" placeholder="INSERT INTO schedule... " />
+            <marker date="1514255565000" expanded="true" signature="3366:3468" placeholder="INSERT INTO patient_data... " />
+            <marker date="1514255565000" expanded="true" signature="3859:3951" placeholder="SELECT * FRO... doctor" />
+            <marker date="1514255565000" expanded="true" signature="4751:4883" placeholder="INSERT INTO provider_appointmentprovider... " />
+            <marker date="1514255565000" expanded="true" signature="5198:5275" placeholder="SELECT categ... category_eacategory" />
+            <marker date="1514255565000" expanded="true" signature="6154:6278" placeholder="SELECT * FRO... provider_appointmentprovider" />
+            <marker date="1514255565000" expanded="true" signature="6154:6302" placeholder="SELECT * FRO... provider_appointmentprovider" />
+            <marker date="1514255565000" expanded="true" signature="6154:6313" placeholder="SELECT * FRO... provider_appointmentprovider" />
           </folding>
         </state>
       </provider>
