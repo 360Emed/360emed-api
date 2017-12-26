@@ -64,6 +64,12 @@ class ProviderDataService implements iProviderDataService
         $this->sqlconnector->insertData($pid,$data,'APPOINTMENT');
     }
 
+    public function getEASeviceIDsByProviderID($providerID)
+    {
+        $this->sqlconnector=new ProviderConnector();
+        return $this->sqlconnector->getEAServiceIDs($providerID);
+    }
+
     private function getProviderIDs($emr_provider_id)
     {
         $ids = array();

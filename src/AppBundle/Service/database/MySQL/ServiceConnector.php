@@ -31,6 +31,20 @@ class ServiceConnector extends DBConnector
             return $row['categoryID'];
         }
     }
+
+    public function getEAServiceIDByFacilityID($facilityID)
+    {
+        $sql = "SELECT categoryID FROM category_eacategory WHERE categoryID = :categoryID LIMIT 1";
+        $query = $this->pdo->prepare($sql);
+        $query->execute(array(
+            'categoryID'=>$facilityID
+        ));
+        //loop through data to get schedule data
+        while($row = $query->fetch()) {
+            return $row['eacategoryID'];
+        }
+    }
+
     public function getServices()
     {
         $services = array();

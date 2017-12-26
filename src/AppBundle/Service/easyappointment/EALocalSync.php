@@ -232,8 +232,12 @@ class EALocalSync extends RestAPI
 
         //add the default service for sync
         $services = array();
-        $services[] = $this->default_service;
 
+        //load all service ids for the provider
+        $providerService = new ProviderDataService();
+        $services[] = $providerService->getEASeviceIDsByProviderID($provider->local_provider_id);
+
+        //save it
         $provider->services = $services;
 
         $settings = new Settings();

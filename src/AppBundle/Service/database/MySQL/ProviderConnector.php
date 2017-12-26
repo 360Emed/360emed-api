@@ -45,7 +45,7 @@ class ProviderConnector extends DBConnector
 
     function checkDoctorExistsByHospitalDoctorID($doctorid)
     {
-        
+
         $sql = "SELECT id FROM doctor
                     WHERE hospital_doctor_id=:DOCTORID LIMIT 1";
         $query = $this->pdo->prepare($sql);
@@ -131,6 +131,42 @@ class ProviderConnector extends DBConnector
         ));
         
     }
+
+    /**
+     * Get all the providers service ids in an array
+     *
+     * @param $providerID
+     */
+    function getEAServiceIDs($providerID)
+    {
+        $sql = "SELECT * FROM schedule WHERE doctor_id=:providerID";
+        $query = $this->pdo->prepare($sql);
+        // use exec() because no results are returned
+        $query->execute(array(
+            'providerID'=>$providerID
+        ));
+
+        //get all facility ids
+        $facilityIDs = array();
+        while($row = $query->fetch())
+        {
+            $dataJson = json_decode($row['schedule_data']);
+            $facilityIDs[$dataJson->facilityid] = $dataJson->facilityid;
+        }
+        //for each facility id, get the easervice ID
+        //get the facility ID by categoryID
+        $easerviceIDs = array();
+        $srv_conn = new ServiceConnector();
+        foreach($facilityIDs as $facilityID)
+        {
+            $serviceID = $srv_conn->getEAServiceIDByFacilityID($facilityID);
+            $easerviceIDs[] = $serviceID;
+        }
+
+        return $easerviceIDs;
+
+    }
+
     /**
      * returns all doctors as Doctor Object
      */
