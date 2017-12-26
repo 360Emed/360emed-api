@@ -113,6 +113,7 @@ class EALocalSync extends RestAPI
                         //patient exists
                         $providerExists=true;
                     }
+                    print_r($result);
                 }
 
                 //update patient if patient exists
@@ -131,7 +132,7 @@ class EALocalSync extends RestAPI
                     //if insert is called, create integration link
                     $providerService->insertProviderMapping($provider);
 
-                    print_r("inserting provider");
+
                 }
 
             }
