@@ -27,7 +27,7 @@ class ServiceConnector extends RestAPI
 
     public function updateService(Service $service)
     {
-       
+
         $post_uri = '/index.php//api/v1/services/' . $service->id;
         $response = $this->client->put($post_uri,array(
             'body' => \GuzzleHttp\json_encode($service)
@@ -45,7 +45,7 @@ class ServiceConnector extends RestAPI
         $response = $this->client->get($post_uri);
         if ($response->getStatusCode()>=500)
             throw new \Exception();
-        return $response;
+        return $response->getBody();
     }
 
     public function deleteService(Service $service)
@@ -54,6 +54,6 @@ class ServiceConnector extends RestAPI
         $response = $this->client->delete($post_uri);
         if ($response->getStatusCode() > 299)
             throw new \Exception();
-        return $response;
+        return $response->getBody();
     }
 }

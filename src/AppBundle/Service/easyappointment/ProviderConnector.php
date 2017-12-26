@@ -45,7 +45,7 @@ class ProviderConnector extends RestAPI
         $response = $this->client->get($post_uri);
         if ($response->getStatusCode()>=500)
             throw new \Exception();
-        return $response;
+        return $response->getBody();
     }
 
     public function deleteProvider(Provider $provider)
