@@ -20,7 +20,7 @@ class ProviderConnector extends RestAPI
             'body' => \GuzzleHttp\json_encode($provider)
         ));
 
-        if ($response->getStatusCode()!=200)
+        if ($response->getStatusCode()>299)
             throw new \Exception("Bad Status Code:" . $response->getStatusCode());
 
         return $response->getBody();
@@ -32,7 +32,7 @@ class ProviderConnector extends RestAPI
         $response = $this->client->put($post_uri,array(
             'body' => \GuzzleHttp\json_encode($provider)
         ));
-        if ($response->getStatusCode()!=200)
+        if ($response->getStatusCode()>299)
             throw new \Exception();
         return $response->getBody();
     }
@@ -52,7 +52,7 @@ class ProviderConnector extends RestAPI
     {
         $post_uri = '/index.php/api/v1/providers/' . $provider->id;
         $response = $this->client->delete($post_uri);
-        if ($response->getStatusCode()!=200)
+        if ($response->getStatusCode()>299)
             throw new \Exception();
         return $response;
     }
