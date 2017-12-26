@@ -243,7 +243,7 @@ class EALocalSync extends RestAPI
 
     }
 
-    public function repairServiceData(Service $service)
+    public function repairServiceData(Service &$service)
     {
         //if ($service->currency == '')
         {
@@ -251,7 +251,7 @@ class EALocalSync extends RestAPI
         }
         //if ($service->duration == '')
         {
-            $service->duration == '30';
+            $service->duration = '30';
         }
         //if ($service->price == '')
         {
