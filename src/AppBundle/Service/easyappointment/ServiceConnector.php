@@ -9,11 +9,11 @@
 namespace AppBundle\Service\easyappointment;
 
 
-class CategoryConnector extends RestAPI
+class ServiceConnector extends RestAPI
 {
-    public function insertCategory(Service $service)
+    public function insertService(Service $service)
     {
-        $post_uri = '/index.php//api/v1/categories';
+        $post_uri = '/index.php//api/v1/services';
         $response = $this->client->post($post_uri,array(
             'body' => \GuzzleHttp\json_encode($service)
         ));
@@ -24,9 +24,9 @@ class CategoryConnector extends RestAPI
         return $response->getBody();
     }
 
-    public function updateCategory(Service $service)
+    public function updateService(Service $service)
     {
-        $post_uri = '/index.php//api/v1/categories/' . $service->id;
+        $post_uri = '/index.php//api/v1/services/' . $service->id;
         $response = $this->client->put($post_uri,array(
             'body' => \GuzzleHttp\json_encode($service)
         ));
@@ -35,20 +35,20 @@ class CategoryConnector extends RestAPI
         return $response->getBody();
     }
 
-    public function getCategory(Service $service)
+    public function getService(Service $service)
     {
         if ($service->id==null)
             return null;
-        $post_uri = '/index.php/api/v1/categories/' . $service->id;
+        $post_uri = '/index.php/api/v1/services/' . $service->id;
         $response = $this->client->get($post_uri);
         if ($response->getStatusCode()>=500)
             throw new \Exception();
         return $response;
     }
 
-    public function deleteCategory(Service $service)
+    public function deleteService(Service $service)
     {
-        $post_uri = '/index.php/api/v1/categories/' . $service->id;
+        $post_uri = '/index.php/api/v1/services/' . $service->id;
         $response = $this->client->delete($post_uri);
         if ($response->getStatusCode() > 299)
             throw new \Exception();

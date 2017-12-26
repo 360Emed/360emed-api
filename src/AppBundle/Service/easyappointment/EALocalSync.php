@@ -11,6 +11,7 @@ namespace AppBundle\Service\easyappointment;
 use AppBundle\Service\easyappointment\PatientConnector as EAPatientConnector;
 use AppBundle\Service\model\Patient;
 use AppBundle\Service\model\Provider;
+use AppBundle\Service\model\Service;
 use AppBundle\Service\model\Settings;
 use AppBundle\Service\PatientDataService;
 use AppBundle\Service\easyappointment\RestAPI;
@@ -163,7 +164,7 @@ class EALocalSync extends RestAPI
     public function syncCategories()
     {
         //get the services classes instantiated
-        $serviceConnector = new CategoryConnector();
+        $serviceConnector = new ServiceConnector();
         //get all categories
         $categoryService = new ServiceDataService();
         //loop through and check if mapping exists in current db
@@ -171,16 +172,17 @@ class EALocalSync extends RestAPI
 
         foreach ($services as $service)
         {
+            $this->repairServiceData($service);
             //if yes, update the category in easyappointment with new name, etc.
             if ($categoryID = $categoryService->checkServiceMappingExists($service->id)!==false)
             {
                 $service->id = $categoryID;
-                $serviceConnector->updateCategory($service);
+                $serviceConnector->updateService($service);
             }
             else
             {
                 //if no, insert category in easyappointment, get the id, and then insert the mapping here
-                $response = json_decode($serviceConnector->insertCategory($service));
+                $response = json_decode($serviceConnector->insertService($service));
                 $service->id = $response->id;
                 $categoryService->generateMapping($service->id,$service->emrserviceID ,$service->name);
             }
@@ -238,6 +240,30 @@ class EALocalSync extends RestAPI
 
         $provider->settings = $settings;
 
+    }
+
+    public function repairServiceData(Service &$service)
+    {
+        if ($service->currency == '')
+        {
+            $service->currency='USD';
+        }
+        if ($service->duration == '')
+        {
+            $service->duration == '30';
+        }
+        if ($service->price == '')
+        {
+            $service->price = 0;
+        }
+        if ($service->availabilitiesType='')
+        {
+            $service->availabilitiesType = 'flexible';
+        }
+        if ($service->attendantsNumber = '')
+        {
+            $service->attendantsNumber = 1;
+        }
     }
 
 }
