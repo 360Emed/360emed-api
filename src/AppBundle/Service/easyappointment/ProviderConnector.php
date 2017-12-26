@@ -28,7 +28,6 @@ class ProviderConnector extends RestAPI
 
     public function updateProvider(Provider $provider)
     {
-        print_r(\GuzzleHttp\json_encode($provider));
         $post_uri = '/index.php/api/v1/providers' . $provider->id;
         $response = $this->client->put($post_uri,array(
             'body' => \GuzzleHttp\json_encode($provider)
@@ -40,7 +39,7 @@ class ProviderConnector extends RestAPI
 
     public function getProvider(Provider $provider)
     {
-        
+
         if ($provider->id==null)
             return null;
         $post_uri = '/index.php/api/v1/providers/' . $provider->id;

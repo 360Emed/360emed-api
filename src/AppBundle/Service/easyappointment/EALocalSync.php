@@ -121,7 +121,7 @@ class EALocalSync extends RestAPI
                 {
                     $result = $ea_providerConnector->getProvider($provider);
                     $result = json_decode($result);
-                    if ($result && $result->id!=null)
+                    if ($result && property_exists($result,'id') && $result->id!=null)
                     {
                         //patient exists
                         $providerExists=true;
