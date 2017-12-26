@@ -101,7 +101,6 @@ class EALocalSync extends RestAPI
         //loop through all patients
         foreach ($providers as $provider)
         {
-            print_r($provider);
             //this is the process for loading the patients
             try
             {
@@ -114,7 +113,7 @@ class EALocalSync extends RestAPI
                         //patient exists
                         $providerExists=true;
                     }
-                    print_r($result);
+
                 }
 
                 //update patient if patient exists
@@ -122,9 +121,11 @@ class EALocalSync extends RestAPI
                 {
                     //if integration link exists, call update api, if not, call insert api
                     $ea_providerConnector->updateProvider($provider);
+                    print_r("provider exists");
                 }
                 else
                 {
+                    print_r("inserting provider");
                     //insert provider
                     $response = json_decode($ea_providerConnector->insertProvider($provider));
 
