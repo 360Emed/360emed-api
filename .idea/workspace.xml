@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ab7d790d-38c2-4299-8d11-578f9dc708fd" name="Default" comment="" />
+    <list default="true" id="ab7d790d-38c2-4299-8d11-578f9dc708fd" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Service/easyappointment/EALocalSync.php" afterPath="$PROJECT_DIR$/src/AppBundle/Service/easyappointment/EALocalSync.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Service/easyappointment/ProviderConnector.php" afterPath="$PROJECT_DIR$/src/AppBundle/Service/easyappointment/ProviderConnector.php" />
+    </list>
     <ignored path="360emed-api.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -22,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="EALocalSync.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EALocalSync.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/easyappointment/EALocalSync.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2345">
-              <caret line="246" column="0" selection-start-line="246" selection-start-column="0" selection-end-line="246" selection-end-column="0" />
+            <state relative-caret-position="470">
+              <caret line="135" column="48" selection-start-line="135" selection-start-column="48" selection-end-line="135" selection-end-column="48" />
               <folding>
                 <element signature="e#139#216#0#PHP" expanded="true" />
               </folding>
@@ -37,8 +40,8 @@
       <file leaf-file-name="ProviderDataService.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/ProviderDataService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="69" column="15" selection-start-line="69" selection-start-column="15" selection-end-line="69" selection-end-column="15" />
+            <state relative-caret-position="287">
+              <caret line="86" column="39" selection-start-line="86" selection-start-column="39" selection-end-line="86" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -95,11 +98,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProviderConnector.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ProviderConnector.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/easyappointment/ProviderConnector.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="30" column="50" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
+            <state relative-caret-position="210">
+              <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
               <folding>
                 <element signature="e#141#178#0#PHP" expanded="true" />
               </folding>
@@ -110,8 +113,8 @@
       <file leaf-file-name="ProviderConnector.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/database/MySQL/ProviderConnector.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="175" column="108" selection-start-line="175" selection-start-column="16" selection-end-line="175" selection-end-column="108" />
+            <state relative-caret-position="191">
+              <caret line="172" column="13" selection-start-line="172" selection-start-column="13" selection-end-line="172" selection-end-column="13" />
               <folding>
                 <element signature="e#138#182#0#PHP" expanded="true" />
                 <marker date="1514322044000" expanded="true" signature="548:666" placeholder="SELECT id FR... patient" />
@@ -577,12 +580,12 @@
       <workItem from="1512873130709" duration="1689000" />
       <workItem from="1513637413324" duration="1491000" />
       <workItem from="1513975147947" duration="8260000" />
-      <workItem from="1514255184819" duration="16170000" />
+      <workItem from="1514255184819" duration="16418000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81330000" />
+    <option name="totallyTimeSpent" value="81578000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="708" extended-state="6" />
@@ -1011,16 +1014,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/ProviderDataService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="69" column="15" selection-start-line="69" selection-start-column="15" selection-end-line="69" selection-end-column="15" />
+        <state relative-caret-position="287">
+          <caret line="86" column="39" selection-start-line="86" selection-start-column="39" selection-end-line="86" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/database/MySQL/ProviderConnector.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="175" column="108" selection-start-line="175" selection-start-column="16" selection-end-line="175" selection-end-column="108" />
+        <state relative-caret-position="191">
+          <caret line="172" column="13" selection-start-line="172" selection-start-column="13" selection-end-line="172" selection-end-column="13" />
           <folding>
             <element signature="e#138#182#0#PHP" expanded="true" />
             <marker date="1514322044000" expanded="true" signature="548:666" placeholder="SELECT id FR... patient" />
@@ -1039,22 +1042,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/easyappointment/ProviderConnector.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/easyappointment/EALocalSync.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="30" column="50" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
+        <state relative-caret-position="470">
+          <caret line="135" column="48" selection-start-line="135" selection-start-column="48" selection-end-line="135" selection-end-column="48" />
           <folding>
-            <element signature="e#141#178#0#PHP" expanded="true" />
+            <element signature="e#139#216#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/easyappointment/EALocalSync.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/easyappointment/ProviderConnector.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2345">
-          <caret line="246" column="0" selection-start-line="246" selection-start-column="0" selection-end-line="246" selection-end-column="0" />
+        <state relative-caret-position="210">
+          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
           <folding>
-            <element signature="e#139#216#0#PHP" expanded="true" />
+            <element signature="e#141#178#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
