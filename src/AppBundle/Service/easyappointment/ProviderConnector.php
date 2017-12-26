@@ -15,6 +15,7 @@ class ProviderConnector extends RestAPI
 {
     public function insertProvider(Provider $provider)
     {
+        print_r(\GuzzleHttp\json_encode($provider));
         $post_uri = '/index.php/api/v1/providers';
         $response = $this->client->post($post_uri,array(
             'body' => \GuzzleHttp\json_encode($provider)
