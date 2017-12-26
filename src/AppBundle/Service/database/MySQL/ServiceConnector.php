@@ -84,7 +84,7 @@ class ServiceConnector extends DBConnector
             return $row['eacategoryID'];
         }
 
-        return false;
+        return null;
     }
 
     function updateMappingRecord($serviceID, $easerviceID)

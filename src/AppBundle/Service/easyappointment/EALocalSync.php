@@ -174,7 +174,7 @@ class EALocalSync extends RestAPI
         {
             $this->repairServiceData($service);
             //if yes, update the category in easyappointment with new name, etc.
-            if ($categoryID = $categoryService->checkServiceMappingExists($service->emrserviceId)!==false)
+            if ($categoryID = $categoryService->checkServiceMappingExists($service->emrserviceId)!=null)
             {
                 $service->id = $categoryID;
                 $serviceConnector->updateService($service);
@@ -244,23 +244,23 @@ class EALocalSync extends RestAPI
 
     public function repairServiceData(Service &$service)
     {
-        if ($service->currency == '')
+        //if ($service->currency == '')
         {
             $service->currency='USD';
         }
-        if ($service->duration == '')
+        //if ($service->duration == '')
         {
             $service->duration == '30';
         }
-        if ($service->price == '')
+        //if ($service->price == '')
         {
             $service->price = 0;
         }
-        if ($service->availabilitiesType='')
+        //if ($service->availabilitiesType='')
         {
             $service->availabilitiesType = 'flexible';
         }
-        if ($service->attendantsNumber = '')
+        //if ($service->attendantsNumber = '')
         {
             $service->attendantsNumber = 1;
         }
