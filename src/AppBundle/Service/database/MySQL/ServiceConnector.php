@@ -84,7 +84,7 @@ class ServiceConnector extends DBConnector
 
     function checkMappingExists($serviceID)
     {
-        print_r('Service ID to check if mapping exists: ' . $serviceID);
+   
         $sql = "SELECT * FROM category_eacategory
                     WHERE categoryID = :categoryID";
         $query = $this->pdo->prepare($sql);

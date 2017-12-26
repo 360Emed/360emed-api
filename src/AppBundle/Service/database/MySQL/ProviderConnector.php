@@ -196,7 +196,7 @@ class ProviderConnector extends DBConnector
 
     function generateMappingRecord($eaproviderID, $providerID)
     {
-        print_r("inserting mapping record");
+
         //insert
         $sql = "INSERT INTO provider_appointmentprovider (providerID, appointmentproviderID)
                     VALUES (:providerID, :eaproviderID)";
@@ -233,7 +233,7 @@ class ProviderConnector extends DBConnector
             'facilityID'=>"'%\"facilityid\":\"". $facilityID . "\"%'"
         ));
 
-        print_r("'%\"facilityid\":\"". $facilityID . "\"%'");
+     
         $schedules = array();
 
         //loop through data to get schedule data

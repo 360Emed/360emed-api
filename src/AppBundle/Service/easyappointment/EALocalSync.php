@@ -95,9 +95,10 @@ class EALocalSync extends RestAPI
                 //record the error
             }
 
-            print_r('Updated record for patient: ' . $patient->email);
+            //print_r('Updated record for patient: ' . $patient->email);
 
         }
+        
         print_r('The sync for patients is completed.');
     }
 
