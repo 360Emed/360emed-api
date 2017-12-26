@@ -184,7 +184,7 @@ class EALocalSync extends RestAPI
                 //if no, insert category in easyappointment, get the id, and then insert the mapping here
                 $response = json_decode($serviceConnector->insertService($service));
                 $service->id = $response->id;
-                $categoryService->generateMapping($service->id,$service->emrserviceID ,$service->name);
+                $categoryService->generateMapping($service->id,$service->emrserviceId ,$service->name);
             }
 
         }
