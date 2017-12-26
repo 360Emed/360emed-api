@@ -57,7 +57,7 @@ class EALocalSync extends RestAPI
                     }
                 }
 
-                $this->repairData($patient);
+                $this->repairPatientData($patient);
 
                 //update patient if patient exists
                 if ($patientExists)
@@ -116,6 +116,10 @@ class EALocalSync extends RestAPI
 
                 }
 
+                print_r($provider);
+                $this->repairProviderData($provider);
+
+
                 //update patient if patient exists
                 if ($providerExists)
                 {
@@ -164,13 +168,23 @@ class EALocalSync extends RestAPI
         //if insert is called, create integration link
     }
 
-    public function repairData(&$patient)
+    public function repairPatientData(&$patient)
     {
         //fix patient data fields
         if ($patient->phone==null)
             $patient->phone='000-000-0000';
         if ($patient->email=='None')
             $patient->email=$patient->local_patient_id . '-default@360emed.hmtrevolution.com';
+
+
+    }
+    public function repairProviderData(Provider &$provider)
+    {
+        //fix patient data fields
+        if ($provider->phone==null)
+            $provider->phone='000-000-0000';
+        if ($provider->email=='None')
+            $provider->email=$provider->id . '-provider-default@360emed.hmtrevolution.com';
 
 
     }

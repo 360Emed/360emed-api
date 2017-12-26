@@ -19,7 +19,7 @@ class ProviderConnector extends RestAPI
         $response = $this->client->post($post_uri,array(
             'body' => \GuzzleHttp\json_encode($provider)
         ));
-        print_r($response);
+        
         if ($response->getStatusCode()!=200)
             throw new \Exception();
 
