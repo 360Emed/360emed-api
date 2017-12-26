@@ -260,7 +260,7 @@ class EALocalSync extends RestAPI
         }
         if ($service->duration == '')
         {
-            $service->duration = '30';
+            $service->duration = '15';
         }
         if ($service->price == '')
         {
