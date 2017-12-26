@@ -233,7 +233,7 @@ class ProviderConnector extends DBConnector
             'facilityID'=>"'%\"facilityid\":\"". $facilityID . "\"%'"
         ));
 
-     
+        print_r($eaproviderID . ':' . $facilityID);
         $schedules = array();
 
         //loop through data to get schedule data
