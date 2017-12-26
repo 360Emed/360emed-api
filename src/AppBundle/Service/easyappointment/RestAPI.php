@@ -16,8 +16,8 @@ class RestAPI
 {
     var $client;
     var $base_uri = 'https://localhost-easyappointment-api';
-    var $username = 'api_user';
-    var $password = 'api-test-password';
+    var $username = '360emed';
+    var $password = '360emed1@3';
 
     public function __construct()
     {
