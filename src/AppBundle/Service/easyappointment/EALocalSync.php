@@ -31,8 +31,9 @@ class EALocalSync extends RestAPI
 
     public function syncAll()
     {
-        $this->syncProviders();
         $this->syncCategories();
+        $this->syncProviders();
+
         //$this->syncPatients();
         //$this->syncAppointments();
         //$this->syncAvailability();
