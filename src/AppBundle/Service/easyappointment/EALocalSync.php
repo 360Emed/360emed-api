@@ -101,6 +101,7 @@ class EALocalSync extends RestAPI
         //loop through all patients
         foreach ($providers as $provider)
         {
+            print_r($provider);
             //this is the process for loading the patients
             try
             {
