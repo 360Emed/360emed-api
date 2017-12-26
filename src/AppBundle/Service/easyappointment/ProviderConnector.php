@@ -40,6 +40,7 @@ class ProviderConnector extends RestAPI
 
     public function getProvider(Provider $provider)
     {
+        print_r($provider);
         if ($provider->id==null)
             return null;
         $post_uri = '/index.php/api/v1/providers/' . $provider->id;

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab7d790d-38c2-4299-8d11-578f9dc708fd" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Service/database/MySQL/ServiceConnector.php" afterPath="$PROJECT_DIR$/src/AppBundle/Service/database/MySQL/ServiceConnector.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Service/easyappointment/ProviderConnector.php" afterPath="$PROJECT_DIR$/src/AppBundle/Service/easyappointment/ProviderConnector.php" />
     </list>
     <ignored path="360emed-api.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,7 +28,7 @@
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/easyappointment/EALocalSync.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="213">
-              <caret line="121" column="55" selection-start-line="121" selection-start-column="55" selection-end-line="121" selection-end-column="55" />
+              <caret line="121" column="56" selection-start-line="121" selection-start-column="56" selection-end-line="121" selection-end-column="56" />
               <folding>
                 <element signature="e#139#216#0#PHP" expanded="true" />
               </folding>
@@ -46,7 +46,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ServiceConnector.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ServiceConnector.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/database/MySQL/ServiceConnector.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
@@ -97,11 +97,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProviderConnector.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ProviderConnector.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/easyappointment/ProviderConnector.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
+            <state relative-caret-position="225">
+              <caret line="42" column="25" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
               <folding>
                 <element signature="e#141#178#0#PHP" expanded="true" />
               </folding>
@@ -193,10 +193,10 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Service/database/MySQL/ProviderConnector.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Service/ProviderDataService.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Service/easyappointment/EALocalSync.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Service/easyappointment/ProviderConnector.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Service/easyappointment/PatientConnector.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Service/easyappointment/ServiceConnector.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Service/database/MySQL/ServiceConnector.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Service/easyappointment/ProviderConnector.php" />
       </list>
     </option>
   </component>
@@ -589,12 +589,12 @@
       <workItem from="1512873130709" duration="1689000" />
       <workItem from="1513637413324" duration="1491000" />
       <workItem from="1513975147947" duration="8260000" />
-      <workItem from="1514255184819" duration="17630000" />
+      <workItem from="1514255184819" duration="17727000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82790000" />
+    <option name="totallyTimeSpent" value="82887000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="708" extended-state="6" />
@@ -1014,31 +1014,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/easyappointment/EALocalSync.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="121" column="55" selection-start-line="121" selection-start-column="55" selection-end-line="121" selection-end-column="55" />
-          <folding>
-            <element signature="e#139#216#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/easyappointment/PatientConnector.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="467">
           <caret line="63" column="50" selection-start-line="63" selection-start-column="50" selection-end-line="63" selection-end-column="50" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/easyappointment/ProviderConnector.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
-          <folding>
-            <element signature="e#141#178#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1065,6 +1045,26 @@
             <marker date="1514326903000" expanded="true" signature="3117:3205" placeholder="UPDATE categ... " />
             <marker date="1514326903000" expanded="true" signature="3117:3250" placeholder="UPDATE categ... " />
             <marker date="1514326903000" expanded="true" signature="3123:3205" placeholder="INSERT INTO category_eacategory... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/easyappointment/EALocalSync.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="121" column="56" selection-start-line="121" selection-start-column="56" selection-end-line="121" selection-end-column="56" />
+          <folding>
+            <element signature="e#139#216#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/easyappointment/ProviderConnector.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="42" column="25" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
+          <folding>
+            <element signature="e#141#178#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
