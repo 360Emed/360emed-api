@@ -118,7 +118,7 @@ class EALocalSync extends RestAPI
                     }
 
                 }
-                
+
                 $this->repairProviderData($provider);
 
 
@@ -127,15 +127,16 @@ class EALocalSync extends RestAPI
                 {
                     //if integration link exists, call update api, if not, call insert api
                     $ea_providerConnector->updateProvider($provider);
-                    print_r("provider exists");
+                    //print_r("provider exists");
                 }
                 else
                 {
-                    print_r("inserting provider");
+                    //print_r("inserting provider");
                     //insert provider
                     $response = json_decode($ea_providerConnector->insertProvider($provider));
 
                     $provider->id=$response->id;
+                    print_r("Updating provider id:" . $provider->id);
                     //when inserting, make sure the patient association record is there
                     //if insert is called, create integration link
                     $providerService->insertProviderMapping($provider);
@@ -150,7 +151,7 @@ class EALocalSync extends RestAPI
                 //record the error
             }
 
-            print_r('Updated record for provider: ' . $provider->email);
+           // print_r('Updated record for provider: ' . $provider->email);
 
         }
         print_r('The sync for provider is completed.');
