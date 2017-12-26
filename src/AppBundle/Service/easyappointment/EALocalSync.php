@@ -174,7 +174,7 @@ class EALocalSync extends RestAPI
         {
             $this->repairServiceData($service);
             //if yes, update the category in easyappointment with new name, etc.
-            if ($categoryID = $categoryService->checkServiceMappingExists($service->id)!==false)
+            if ($categoryID = $categoryService->checkServiceMappingExists($service->emrserviceId)!==false)
             {
                 $service->id = $categoryID;
                 $serviceConnector->updateService($service);
