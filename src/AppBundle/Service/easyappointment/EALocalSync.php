@@ -123,7 +123,7 @@ class EALocalSync extends RestAPI
                 }
                 else
                 {
-                    //insert patient
+                    //insert provider
                     $response = json_decode($ea_providerConnector->insertProvider($provider));
 
                     $provider->id=$response->id;
@@ -131,7 +131,7 @@ class EALocalSync extends RestAPI
                     //if insert is called, create integration link
                     $providerService->insertProviderMapping($provider);
 
-                    print_r($response);
+                    print_r("inserting provider");
                 }
 
             }

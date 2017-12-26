@@ -27,8 +27,8 @@
       <file leaf-file-name="EALocalSync.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/easyappointment/EALocalSync.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
+            <state relative-caret-position="405">
+              <caret line="133" column="50" selection-start-line="133" selection-start-column="50" selection-end-line="133" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -475,12 +475,12 @@
       <workItem from="1512873130709" duration="1689000" />
       <workItem from="1513637413324" duration="1491000" />
       <workItem from="1513975147947" duration="8260000" />
-      <workItem from="1514255184819" duration="2063000" />
+      <workItem from="1514255184819" duration="2165000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67223000" />
+    <option name="totallyTimeSpent" value="67325000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="708" extended-state="6" />
@@ -941,8 +941,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/easyappointment/EALocalSync.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="29" column="10" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
+        <state relative-caret-position="405">
+          <caret line="133" column="50" selection-start-line="133" selection-start-column="50" selection-end-line="133" selection-end-column="50" />
           <folding />
         </state>
       </provider>
