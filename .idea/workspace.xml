@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab7d790d-38c2-4299-8d11-578f9dc708fd" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Service/easyappointment/PatientConnector.php" afterPath="$PROJECT_DIR$/src/AppBundle/Service/easyappointment/PatientConnector.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Service/easyappointment/ProviderConnector.php" afterPath="$PROJECT_DIR$/src/AppBundle/Service/easyappointment/ProviderConnector.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Service/database/MySQL/ProviderConnector.php" afterPath="$PROJECT_DIR$/src/AppBundle/Service/database/MySQL/ProviderConnector.php" />
     </list>
     <ignored path="360emed-api.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,11 +44,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ProviderAPIController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ProviderAPIController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="296">
+              <caret line="60" column="60" selection-start-line="60" selection-start-column="60" selection-end-line="60" selection-end-column="60" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="ProviderDataService.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/ProviderDataService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="83" column="20" selection-start-line="83" selection-start-column="20" selection-end-line="83" selection-end-column="20" />
+            <state relative-caret-position="467">
+              <caret line="92" column="48" selection-start-line="92" selection-start-column="48" selection-end-line="92" selection-end-column="48" />
               <folding>
                 <element signature="e#125#180#0#PHP" expanded="true" />
               </folding>
@@ -57,31 +66,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Provider.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/model/Provider.php">
+      <file leaf-file-name="routing.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/config/routing.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+            <state relative-caret-position="390">
+              <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Settings.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/model/Settings.php">
+      <file leaf-file-name="SyncController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/SyncController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Service.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/model/Service.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+            <state relative-caret-position="75">
+              <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -119,7 +118,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PatientConnector.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PatientConnector.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/easyappointment/PatientConnector.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="422">
@@ -131,25 +130,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProviderConnector.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ProviderConnector.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/database/MySQL/ProviderConnector.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="173" column="41" selection-start-line="173" selection-start-column="41" selection-end-line="173" selection-end-column="41" />
+            <state relative-caret-position="274">
+              <caret line="228" column="59" selection-start-line="228" selection-start-column="59" selection-end-line="228" selection-end-column="59" />
               <folding>
                 <element signature="e#138#182#0#PHP" expanded="true" />
-                <marker date="1514260700000" expanded="true" signature="626:744" placeholder="SELECT id FR... patient" />
-                <marker date="1514260700000" expanded="true" signature="1315:1399" placeholder="SELECT id FR... patient" />
-                <marker date="1514260700000" expanded="true" signature="2218:2365" placeholder="INSERT INTO patient... " />
-                <marker date="1514260700000" expanded="true" signature="2897:2964" placeholder="DELETE FROM " />
-                <marker date="1514260700000" expanded="true" signature="2908:2964" placeholder="INSERT INTO schedule... " />
-                <marker date="1514260700000" expanded="true" signature="3366:3468" placeholder="INSERT INTO patient_data... " />
-                <marker date="1514260700000" expanded="true" signature="3859:3951" placeholder="SELECT * FRO... doctor" />
-                <marker date="1514260700000" expanded="true" signature="4796:4928" placeholder="INSERT INTO provider_appointmentprovider... " />
-                <marker date="1514260700000" expanded="true" signature="5243:5320" placeholder="SELECT categ... category_eacategory" />
-                <marker date="1514260700000" expanded="true" signature="6199:6335" placeholder="SELECT * FRO... provider_appointmentprovider" />
-                <marker date="1514260700000" expanded="true" signature="6199:6382" placeholder="SELECT * FRO... provider_appointmentprovider" />
-                <marker date="1514260700000" expanded="true" signature="6199:6393" placeholder="SELECT * FRO... provider_appointmentprovider" />
+                <marker date="1514263494000" expanded="true" signature="626:744" placeholder="SELECT id FR... patient" />
+                <marker date="1514263494000" expanded="true" signature="1315:1399" placeholder="SELECT id FR... patient" />
+                <marker date="1514263494000" expanded="true" signature="2218:2365" placeholder="INSERT INTO patient... " />
+                <marker date="1514263494000" expanded="true" signature="2897:2964" placeholder="DELETE FROM " />
+                <marker date="1514263494000" expanded="true" signature="2908:2964" placeholder="INSERT INTO schedule... " />
+                <marker date="1514263494000" expanded="true" signature="3366:3468" placeholder="INSERT INTO patient_data... " />
+                <marker date="1514263494000" expanded="true" signature="3859:3951" placeholder="SELECT * FRO... doctor" />
+                <marker date="1514263494000" expanded="true" signature="4796:4928" placeholder="INSERT INTO provider_appointmentprovider... " />
+                <marker date="1514263494000" expanded="true" signature="5538:5615" placeholder="SELECT categ... category_eacategory" />
+                <marker date="1514263494000" expanded="true" signature="6494:6630" placeholder="SELECT * FRO... provider_appointmentprovider" />
+                <marker date="1514263494000" expanded="true" signature="6494:6677" placeholder="SELECT * FRO... provider_appointmentprovider" />
+                <marker date="1514263494000" expanded="true" signature="6494:6688" placeholder="SELECT * FRO... provider_appointmentprovider" />
               </folding>
             </state>
           </provider>
@@ -200,11 +199,11 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Service/model/Settings.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Service/model/Provider.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Service/ProviderDataService.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Service/database/MySQL/ProviderConnector.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Service/easyappointment/RestAPI.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Service/easyappointment/EALocalSync.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Service/easyappointment/ProviderConnector.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Service/easyappointment/PatientConnector.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Service/database/MySQL/ProviderConnector.php" />
       </list>
     </option>
   </component>
@@ -597,12 +596,12 @@
       <workItem from="1512873130709" duration="1689000" />
       <workItem from="1513637413324" duration="1491000" />
       <workItem from="1513975147947" duration="8260000" />
-      <workItem from="1514255184819" duration="5483000" />
+      <workItem from="1514255184819" duration="7060000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70643000" />
+    <option name="totallyTimeSpent" value="72220000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="708" extended-state="6" />
@@ -907,16 +906,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ProviderAPIController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="62" column="32" selection-start-line="62" selection-start-column="32" selection-end-line="62" selection-end-column="32" />
-          <folding>
-            <element signature="e#40#82#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/PatientDataService.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="334">
@@ -939,22 +928,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="14" column="45" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/SyncController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -983,38 +956,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/database/MySQL/ProviderConnector.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="173" column="41" selection-start-line="173" selection-start-column="41" selection-end-line="173" selection-end-column="41" />
-          <folding>
-            <element signature="e#138#182#0#PHP" expanded="true" />
-            <marker date="1514260700000" expanded="true" signature="626:744" placeholder="SELECT id FR... patient" />
-            <marker date="1514260700000" expanded="true" signature="1315:1399" placeholder="SELECT id FR... patient" />
-            <marker date="1514260700000" expanded="true" signature="2218:2365" placeholder="INSERT INTO patient... " />
-            <marker date="1514260700000" expanded="true" signature="2897:2964" placeholder="DELETE FROM " />
-            <marker date="1514260700000" expanded="true" signature="2908:2964" placeholder="INSERT INTO schedule... " />
-            <marker date="1514260700000" expanded="true" signature="3366:3468" placeholder="INSERT INTO patient_data... " />
-            <marker date="1514260700000" expanded="true" signature="3859:3951" placeholder="SELECT * FRO... doctor" />
-            <marker date="1514260700000" expanded="true" signature="4796:4928" placeholder="INSERT INTO provider_appointmentprovider... " />
-            <marker date="1514260700000" expanded="true" signature="5243:5320" placeholder="SELECT categ... category_eacategory" />
-            <marker date="1514260700000" expanded="true" signature="6199:6335" placeholder="SELECT * FRO... provider_appointmentprovider" />
-            <marker date="1514260700000" expanded="true" signature="6199:6382" placeholder="SELECT * FRO... provider_appointmentprovider" />
-            <marker date="1514260700000" expanded="true" signature="6199:6393" placeholder="SELECT * FRO... provider_appointmentprovider" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/ProviderDataService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="83" column="20" selection-start-line="83" selection-start-column="20" selection-end-line="83" selection-end-column="20" />
-          <folding>
-            <element signature="e#125#180#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/easyappointment/RestAPI.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1028,16 +969,6 @@
         <state relative-caret-position="290">
           <caret line="135" column="74" selection-start-line="135" selection-start-column="74" selection-end-line="135" selection-end-column="74" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/easyappointment/ProviderConnector.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="34" column="41" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
-          <folding>
-            <element signature="e#141#178#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1065,6 +996,72 @@
           <caret line="62" column="42" selection-start-line="62" selection-start-column="42" selection-end-line="62" selection-end-column="42" />
           <folding>
             <element signature="e#141#177#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="10" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/easyappointment/ProviderConnector.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="34" column="41" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
+          <folding>
+            <element signature="e#141#178#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/SyncController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ProviderAPIController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="60" column="60" selection-start-line="60" selection-start-column="60" selection-end-line="60" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/ProviderDataService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="467">
+          <caret line="92" column="48" selection-start-line="92" selection-start-column="48" selection-end-line="92" selection-end-column="48" />
+          <folding>
+            <element signature="e#125#180#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/database/MySQL/ProviderConnector.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="228" column="59" selection-start-line="228" selection-start-column="59" selection-end-line="228" selection-end-column="59" />
+          <folding>
+            <element signature="e#138#182#0#PHP" expanded="true" />
+            <marker date="1514263494000" expanded="true" signature="626:744" placeholder="SELECT id FR... patient" />
+            <marker date="1514263494000" expanded="true" signature="1315:1399" placeholder="SELECT id FR... patient" />
+            <marker date="1514263494000" expanded="true" signature="2218:2365" placeholder="INSERT INTO patient... " />
+            <marker date="1514263494000" expanded="true" signature="2897:2964" placeholder="DELETE FROM " />
+            <marker date="1514263494000" expanded="true" signature="2908:2964" placeholder="INSERT INTO schedule... " />
+            <marker date="1514263494000" expanded="true" signature="3366:3468" placeholder="INSERT INTO patient_data... " />
+            <marker date="1514263494000" expanded="true" signature="3859:3951" placeholder="SELECT * FRO... doctor" />
+            <marker date="1514263494000" expanded="true" signature="4796:4928" placeholder="INSERT INTO provider_appointmentprovider... " />
+            <marker date="1514263494000" expanded="true" signature="5538:5615" placeholder="SELECT categ... category_eacategory" />
+            <marker date="1514263494000" expanded="true" signature="6494:6630" placeholder="SELECT * FRO... provider_appointmentprovider" />
+            <marker date="1514263494000" expanded="true" signature="6494:6677" placeholder="SELECT * FRO... provider_appointmentprovider" />
+            <marker date="1514263494000" expanded="true" signature="6494:6688" placeholder="SELECT * FRO... provider_appointmentprovider" />
           </folding>
         </state>
       </provider>

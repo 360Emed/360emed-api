@@ -183,6 +183,15 @@ class ProviderConnector extends DBConnector
         ));
     }
 
+    /**
+     *
+     *
+     * SELECT * FROM provider_appointmentprovider pa, doctor p, schedule s WHERE appointmentproviderID = 92 and pa.providerID = p.ID and s.doctor_id = p.id and schedule_data like '%"facilityid":"501"%'
+     * @param $eacategoryID
+     * @return mixed
+     *
+     *
+     */
     public function getFacilityIDByCategoryID($eacategoryID)
     {
         $sql = "SELECT categoryID FROM category_eacategory WHERE eacategoryID = :eacategoryID";
@@ -214,9 +223,10 @@ class ProviderConnector extends DBConnector
         $query = $this->pdo->prepare($sql);
         $query->execute(array(
             'eaproviderID'=>$eaproviderID,
-            'facilityID'=>"%\"facilityid\":\"". $facilityID . "\"%"
+            'facilityID'=>"'%\"facilityid\":\"". $facilityID . "\"%'"
         ));
 
+        print_r("'%\"facilityid\":\"". $facilityID . "\"%'");
         $schedules = array();
 
         //loop through data to get schedule data
