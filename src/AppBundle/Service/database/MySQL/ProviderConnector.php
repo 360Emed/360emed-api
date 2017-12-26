@@ -248,8 +248,7 @@ class ProviderConnector extends DBConnector
             $schedule->providerID = $row['doctor_id'];
             $schedule->eaproviderID = $eaproviderID;
             $schedule->eacategoryID = $eacategoryID;
-
-            print_r($schedule);
+            
             //validate datetime
             if (strtotime($schedule->start)>=strtotime($startDate) && strtotime($schedule->end)<=strtotime($endDate))
             {
