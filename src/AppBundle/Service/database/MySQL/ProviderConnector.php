@@ -226,7 +226,7 @@ class ProviderConnector extends DBConnector
 
         $facilityID = $srv_conn->getFacilityIDByCategoryID($eacategoryID);
         //get the doctor id from provider ID in the join, then get the schedule based on the doctor id
-        $sql = "SELECT * FROM provider_appointmentprovider pa, doctor p, schedule s WHERE appointmentproviderID = :eaproviderID and pa.providerID = p.ID and s.doctor_id = p.id and schedule_data LIKE :facilityID";
+        $sql = "SELECT DISTINCT doctor_id, schedule_data FROM provider_appointmentprovider pa, doctor p, schedule s WHERE appointmentproviderID = :eaproviderID and pa.providerID = p.ID and s.doctor_id = p.id and schedule_data LIKE :facilityID";
         $query = $this->pdo->prepare($sql);
         $query->execute(array(
             'eaproviderID'=>$eaproviderID,
