@@ -249,9 +249,9 @@ class ProviderConnector extends DBConnector
             $schedule->eaproviderID = $eaproviderID;
             $schedule->eacategoryID = $eacategoryID;
 
-            
+
             //validate datetime
-            if (\DateTime::createFromFormat('m/d/Y',$schedule->start)>=\DateTime::createFromFormat('m-d-Y',$startDate) && \DateTime::createFromFormat('m/d/Y',$schedule->end)<=\DateTime::createFromFormat('m-d-Y',$endDate))
+            if (\DateTime::createFromFormat('m/d/Y',$schedule->start)->getTimestamp()>=\DateTime::createFromFormat('m-d-Y',$startDate)->getTimestamp() && \DateTime::createFromFormat('m/d/Y',$schedule->end)->getTimestamp()<=\DateTime::createFromFormat('m-d-Y',$endDate)->getTimestamp())
             {
                 $schedules[] = $schedule;
             }
