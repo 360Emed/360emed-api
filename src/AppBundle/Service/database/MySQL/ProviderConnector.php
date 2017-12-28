@@ -249,7 +249,7 @@ class ProviderConnector extends DBConnector
             $schedule->eaproviderID = $eaproviderID;
             $schedule->eacategoryID = $eacategoryID;
 
-
+            print_r($schedule->start);
             //validate datetime
             if (\DateTime::createFromFormat('m/d/Y',$schedule->start)->getTimestamp()>=\DateTime::createFromFormat('m-d-Y',$startDate)->getTimestamp() && \DateTime::createFromFormat('m/d/Y',$schedule->end)->getTimestamp()<=\DateTime::createFromFormat('m-d-Y',$endDate)->getTimestamp())
             {
