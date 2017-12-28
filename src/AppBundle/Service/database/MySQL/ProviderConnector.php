@@ -251,7 +251,7 @@ class ProviderConnector extends DBConnector
 
             print_r($schedule->start);
             //validate datetime
-            if (\DateTime::createFromFormat('m/d/Y',$schedule->start)->getTimestamp()>=\DateTime::createFromFormat('m-d-Y',$startDate)->getTimestamp() && \DateTime::createFromFormat('m/d/Y',$schedule->end)->getTimestamp()<=\DateTime::createFromFormat('m-d-Y',$endDate)->getTimestamp())
+            if (strtotime($schedule->start)>=\DateTime::createFromFormat('m-d-Y',$startDate)->getTimestamp() && strtotime($schedule->end)<=\DateTime::createFromFormat('m-d-Y',$endDate)->getTimestamp())
             {
                 $schedules[] = $schedule;
             }
