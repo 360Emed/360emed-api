@@ -18,4 +18,6 @@ class Schedule
     var $eacategoryID;
     var $eaproviderID;
     var $facilityID;
+    var $emrproviderID;
+    var $emrcategoryID;
 }
