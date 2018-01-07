@@ -16,6 +16,7 @@ class ScheduleConnector extends RestAPI
 
     public function insertSchedule(Schedule $schedule)
     {
+        print_r($schedule);die;
         $post_uri = '/index.php/api/v1/schedule';
         $response = $this->client->post($post_uri,array(
             'body' => \GuzzleHttp\json_encode($schedule)
