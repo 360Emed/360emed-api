@@ -231,7 +231,7 @@ class ProviderConnector extends DBConnector
      */
     function getEAProviderIDByProviderID($providerID)
     {
-        $sql = "SELECT * FROM provider_appointmentprovider WHERE doctor_id=:providerID";
+        $sql = "SELECT * FROM provider_appointmentprovider WHERE providerID=:providerID";
         $query = $this->pdo->prepare($sql);
         // use exec() because no results are returned
         $query->execute(array(
