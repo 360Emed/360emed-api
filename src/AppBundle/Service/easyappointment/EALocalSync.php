@@ -16,6 +16,7 @@ use AppBundle\Service\model\Settings;
 use AppBundle\Service\PatientDataService;
 use AppBundle\Service\easyappointment\RestAPI;
 use AppBundle\Service\ProviderDataService;
+use AppBundle\Service\ScheduleDataService;
 use AppBundle\Service\ServiceDataService;
 
 /**
@@ -36,7 +37,7 @@ class EALocalSync extends RestAPI
 
         //$this->syncPatients();
         //$this->syncAppointments();
-        //$this->syncAvailability();
+        $this->syncAvailability();
     }
 
     /**
@@ -201,6 +202,15 @@ class EALocalSync extends RestAPI
     public function syncAvailability()
     {
         //not sure how this works yet, need to figure it out
+        //loop through all the schedule data
+        //call the remote api to insert
+        $scheduleService = new ScheduleDataService();
+        $scheduleConnector = new ScheduleConnector();
+        $schedules = $scheduleService->getAllSchedule();
+        foreach ($schedules as $schedule)
+        {
+            $scheduleConnector->insertSchedule($schedule);
+        }
     }
 
     public function syncAppointments()

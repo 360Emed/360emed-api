@@ -129,6 +129,17 @@ class ProviderConnector extends DBConnector
             'schedule_data'=>json_encode($doctorData),
             'doctorID'=>$doctorID
         ));
+
+        //insert facility from data
+        //insert
+        $sql = "INSERT INTO facility (emrfacilityID, emrfacilityName)
+                    VALUES (:facilityID, :facilityName)";
+        $query = $this->pdo->prepare($sql);
+        // use exec() because no results are returned
+        $query->execute(array(
+            'facilityID'=>$doctorData['facilityid'],
+            'facilityName'=>$doctorData['facility']
+        ));
         
     }
 
@@ -194,6 +205,11 @@ class ProviderConnector extends DBConnector
         return $providers;
     }
 
+    /**
+     * Generating a ea id and providerID mapping
+     * @param $eaproviderID
+     * @param $providerID
+     */
     function generateMappingRecord($eaproviderID, $providerID)
     {
 
@@ -206,6 +222,28 @@ class ProviderConnector extends DBConnector
             'providerID'=>$providerID,
             'eaproviderID'=>$eaproviderID
         ));
+    }
+
+    /**
+     * Get the ea provider ID by provider ID
+     * @param $providerID
+     * @return mixed
+     */
+    function getEAProviderIDByProviderID($providerID)
+    {
+        $sql = "SELECT * FROM provider_appointmentprovider WHERE doctor_id=:providerID";
+        $query = $this->pdo->prepare($sql);
+        // use exec() because no results are returned
+        $query->execute(array(
+            'providerID'=>$providerID
+        ));
+        $eaproviderID = nul;
+        while($row = $query->fetch())
+        {
+            $eaproviderID = $row['appointmentproviderID'];
+        }
+
+        return $eaproviderID;
     }
 
    

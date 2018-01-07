@@ -15,33 +15,38 @@ class ServiceDataService
 {
     var $sqlconnector;
 
+    public function __construct()
+    {
+        $this->sqlconnector = new ServiceConnector();
+    }
+
     public function getAllServices()
     {
-        $this->sqlconnector=new ServiceConnector();
         return $this->sqlconnector->getServices();
     }
 
     public function generateMapping($easerviceID, $serviceID, $serviceName)
     {
-        $this->sqlconnector=new ServiceConnector();
         $this->sqlconnector->generateMappingRecord($easerviceID, $serviceID, $serviceName);
     }
 
     public function checkServiceMappingExists($serviceID)
     {
-        $this->sqlconnector=new ServiceConnector();
         return $this->sqlconnector->checkMappingExists($serviceID);
     }
 
     public function updateMapping($serviceID, $easerviceID)
     {
-        $this->sqlconnector=new ServiceConnector();
         $this->sqlconnector->updateMappingRecord($serviceID, $easerviceID);
     }
 
     public function getFacilityIDbyEACategoryID($eacategoryID)
     {
-        $this->sqlconnector=new ServiceConnector();
-        $this->sqlconnector->getFacilityIDByCategoryID($eacategoryID);
+        return $this->sqlconnector->getFacilityIDByCategoryID($eacategoryID);
+    }
+
+    public function getEACategoryIDByFacilityID($facilityID)
+    {
+       return $this->sqlconnector->getEAServiceIDByFacilityID($facilityID);
     }
 }

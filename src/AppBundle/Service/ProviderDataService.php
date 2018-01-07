@@ -15,6 +15,11 @@ class ProviderDataService implements iProviderDataService
 {
     var $sqlconnector;
 
+    public function __construct()
+    {
+        $this->sqlconnector = new ProviderConnector();
+    }
+
     function saveDoctorData($dataString)
     {
         // TODO: Implement saveDoctorData() method.
@@ -51,14 +56,12 @@ class ProviderDataService implements iProviderDataService
 
     private function saveToDBDoctor($firstname, $lastname, $email, $did, $data)
     {
-        $this->sqlconnector=new ProviderConnector();
         $pid = $this->sqlconnector->insertDoctor($firstname, $lastname, $email, $did);
 
     }
 
     private function saveToDBSchedule($firstname, $lastname, $email, $did, $data)
     {
-        $this->sqlconnector=new ProviderConnector();
         $pid = $this->sqlconnector->insertDoctor($firstname, $lastname, $email, $did);
         //$this->sqlconnector->cleanScheduleData($pid);
         $this->sqlconnector->insertData($pid,$data,'APPOINTMENT');
@@ -83,19 +86,21 @@ class ProviderDataService implements iProviderDataService
 
     public function getAllProviders()
     {
-        $this->sqlconnector = new ProviderConnector();
         return $this->sqlconnector->getAllProviders();
     }
 
     public function insertProviderMapping(Provider $provider)
     {
-        $this->sqlconnector=new ProviderConnector();
         $this->sqlconnector->generateMappingRecord($provider->id,$provider->local_provider_id);
     }
 
     public function getProviderSchedule($providerID, $categoryID, $startDate, $endDate)
     {
-        $this->sqlconnector=new ProviderConnector();
         return $this->sqlconnector->getProviderSchedule($providerID,$categoryID, $startDate, $endDate);
+    }
+
+    public function getEAProviderIDByProviderID($providerID)
+    {
+        return $this->sqlconnector->getEAProviderIDByProviderID($providerID);
     }
 }
