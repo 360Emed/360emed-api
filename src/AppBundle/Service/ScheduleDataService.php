@@ -8,8 +8,9 @@
 
 namespace AppBundle\Service;
 
-use AppBundle\Service\database\MySQL\ProviderConnector;
-use AppBundle\Service\model\Provider;
+
+
+use AppBundle\Service\database\MySQL\ScheduleConnector;
 
 class ScheduleDataService
 {
@@ -17,7 +18,7 @@ class ScheduleDataService
 
     public function getAllSchedule()
     {
-        $this->sqlconnector=new ProviderConnector();
-        return $this->sqlconnector->getProviderSchedule();
+        $this->sqlconnector=new ScheduleConnector();
+        return $this->sqlconnector->getAllSchedules();
     }
 }
