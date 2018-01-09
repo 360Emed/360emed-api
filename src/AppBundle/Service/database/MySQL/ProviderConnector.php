@@ -282,7 +282,7 @@ class ProviderConnector extends DBConnector
             $schedule = new Schedule();
             $schedule->start = $dataJson->slottimestart;
             $schedule->end = $dataJson->slottimeend;
-            $schedule->id = $dataJson->apptslotid;
+            $schedule->id = $dataJson->scheduleid;
             $schedule->providerID = $row['doctor_id'];
             $schedule->eaproviderID = $eaproviderID;
             $schedule->eacategoryID = $eacategoryID;
